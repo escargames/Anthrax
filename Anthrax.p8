@@ -22,7 +22,13 @@ function _update()
   --
   if (state == "play") then
     if (btnp(2)) then
-      add(ball_list, { x=10+rnd(108), y=10+rnd(108), r=5+rnd(5) })
+      add(ball_list, { 
+          x=crnd(10, 118), 
+          y=crnd(10, 118), 
+          r=crnd(5,10),
+          vx=crnd(-20, 20),
+          vy=crnd(-20, 20)
+          })
       sfx(1)
     end
     --
@@ -47,6 +53,10 @@ function cprint(text, y, color)
   print(text, x-1, y, 7)
   print(text, x+1, y, 7)
   print(text, x, y, color)
+end
+
+function crnd(min, max)
+  return min + rnd(max-min)
 end
 
 config.play.draw = function ()
