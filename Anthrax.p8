@@ -14,12 +14,16 @@ function _update()
   if (state == "menu") then
     if (btnp(0)) then
       state = "play"
+      ball_list = {}
       sfx(0)
     end
   end
   --
   --
   if (state == "play") then
+    if (btnp(2)) then
+      add(ball_list, { x=rnd(128), y=rnd(128) })
+    end
     --
     --
     if (btnp(1)) then
@@ -45,6 +49,9 @@ function cprint(text, y, color)
 end
 
 config.play.draw = function ()
+  foreach(ball_list, function(b)
+    circfill(b.x, b.y, 5, 12)
+  end)
   cprint("coucou", 40, 14)
 end
 
