@@ -52,6 +52,8 @@ end
 config.play.draw = function ()
   foreach(ball_list, function(b)
     circfill(b.x, b.y, b.r, 12)
+    circ(b.x, b.y, b.r, 13)
+    circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
   end)
 end
 
