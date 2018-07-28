@@ -31,7 +31,20 @@ function _update()
           })
       sfx(1)
     end
-    --
+
+    foreach(ball_list, function(b)
+      b.x += b.vx / 30
+      b.y += b.vy / 30
+      if b.vx < 0 and (b.x - b.r) < 0 then
+        b.vx = - b.vx
+      end
+       if b.vx > 0 and (b.x + b.r) > 128 then
+        b.vx = - b.vx
+      end
+       if b.vy > 0 and (b.y + b.r) > 128 then
+        b.vy = - b.vy
+      end
+    end)
     --
     if (btnp(1)) then
       state = "menu"
