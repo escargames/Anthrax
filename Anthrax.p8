@@ -22,7 +22,8 @@ function _update()
   --
   if (state == "play") then
     if (btnp(2)) then
-      add(ball_list, { x=rnd(128), y=rnd(128) })
+      add(ball_list, { x=rnd(128), y=rnd(128), t=5+rnd(5) })
+      sfx(0)
     end
     --
     --
@@ -50,9 +51,8 @@ end
 
 config.play.draw = function ()
   foreach(ball_list, function(b)
-    circfill(b.x, b.y, 5, 12)
+    circfill(b.x, b.y, b.t, 12)
   end)
-  cprint("coucou", 40, 14)
 end
 
 __sfx__
