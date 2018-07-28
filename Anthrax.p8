@@ -31,7 +31,16 @@ end
 
 function _draw()
   cls(config[state].bg)
-  print(config[state].tl, 60, 10)
+  cprint(config[state].tl, 10)
+end
+
+function cprint(text, y, color)
+  local x = 64 - 2 * #text
+  print(text, x, y+1, 7)
+  print(text, x, y-1, 7)
+  print(text, x-1, y, 7)
+  print(text, x+1, y, 7)
+  print(text, x, y, color)
 end
 
 __sfx__
