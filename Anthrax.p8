@@ -1,9 +1,9 @@
 pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
-bg = {
-    menu = 2,
-    play = 3
+config = {
+    menu = {bg = 2},
+    play = {bg = 3}
 }
 
 function _init()
@@ -26,7 +26,8 @@ function _update()
 end
 
 function _draw()
-  cls(bg[state])
+  cls(config[state].bg)
+  
 end
 
 __gfx__
