@@ -2,8 +2,8 @@ pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 config = {
-    menu = {bg = 2, tl = "menu"},
-    play = {bg = 3, tl = "play"}
+    menu = {bg = 2, tl = "menu", draw = function() end},
+    play = {bg = 3, tl = "play", draw = 0}
 }
 
 function _init()
@@ -32,6 +32,7 @@ end
 function _draw()
   cls(config[state].bg)
   cprint(config[state].tl, 10)
+  config[state].draw()
 end
 
 function cprint(text, y, color)
@@ -41,6 +42,10 @@ function cprint(text, y, color)
   print(text, x-1, y, 7)
   print(text, x+1, y, 7)
   print(text, x, y, color)
+end
+
+config.play.draw = function ()
+  cprint("coucou", 40, 14)
 end
 
 __sfx__
