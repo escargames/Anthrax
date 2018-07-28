@@ -1,6 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
+bg = {
+    menu = 2,
+    play = 3
+}
 
 function _init()
   state = "menu"
@@ -22,11 +26,7 @@ function _update()
 end
 
 function _draw()
-  if (state == "menu") then
-    cls(2)
-  elseif (state == "play") then
-    cls(3)
-  end
+  cls(bg[state])
 end
 
 __gfx__
