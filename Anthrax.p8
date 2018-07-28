@@ -22,7 +22,7 @@ function _update()
   --
   if (state == "play") then
     if (btnp(2)) then
-      add(ball_list, { x=10+rnd(118), y=10+rnd(118), r=5+rnd(5) })
+      add(ball_list, { x=10+rnd(108), y=10+rnd(108), r=5+rnd(5) })
       sfx(1)
     end
     --
