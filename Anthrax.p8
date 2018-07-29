@@ -103,9 +103,13 @@ function update_play()
         add_shot()
     end
 
-    if lives <= 0 then
-        state = "pause"
+    if #ball_list == 0 then
+        level += 1
     end
+
+    if lives <= 0 or #ball_list == 0 then
+        state = "pause"
+    end      
 end
 
 --
@@ -118,6 +122,8 @@ function update_pause()
     if (btnp(4)) then
         if lives <= 0 then
             state = "menu"
+        elseif #ball_list == 0 then
+            begin_play()
         else
             state = "play"
         end
@@ -277,9 +283,12 @@ end
 config.pause.draw = function ()
     draw_play()
     if lives <= 0 then
-      cprint("game over", 40)
+        cprint("game over", 30)
+        cprint("score: "..tostr(sc), 40)
+    elseif #ball_list == 0  and level > 1 then
+        cprint("congrats! score: "..tostr(sc), 40)
     else
-      cprint("level "..tostr(level), 40)
+        cprint("level "..tostr(level), 40)
     end
     cprint("press w", 50)
 end
