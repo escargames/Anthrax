@@ -2,9 +2,9 @@ pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 config = {
-    menu = {bg = 2, tl = "menu"},
-    play = {bg = 3, tl = "play"},
-    pause = {bg = 0, tl = "pause"},
+    menu = {tl = "menu"},
+    play = {tl = "play"},
+    pause = {tl = "pause"},
 }
 
 --
@@ -27,7 +27,6 @@ function _update()
 end
 
 function _draw()
-    cls(config[state].bg)
     config[state].draw()
 end
 
@@ -35,16 +34,19 @@ end
 -- cool functions
 --
 function coprint(text, x, y, color)
-    print(text, x, y+1, 7)
-    print(text, x, y-1, 7)
-    print(text, x-1, y, 7)
-    print(text, x+1, y, 7)
-    
-    print(text, x, y, color)
+    print(text, x, y+1, 1)
+    print(text, x, y-1, 1)
+    print(text, x-1, y-1, 1)
+    print(text, x+1, y+1, 1)
+    print(text, x-1, y, 1)
+    print(text, x+1, y, 1)
+
+    print(text, x, y, color or 7)
 end
+
 function cprint(text, y, color)
     local x = 64 - 2 * #text
-    coprint(text, x, y, color)
+    coprint(text, x, y, color or 7)
 end
 
 function crnd(min, max)
@@ -103,7 +105,7 @@ function update_play()
     update_player()
     update_shots()
 
-    if (btnp(2)) then
+    if (btnp(5)) then
         add_shot()
     end
 
@@ -130,8 +132,6 @@ end
 --
 
 function update_pause()
-    config.pause.bg = config.play.bg
-
     if (btnp(4)) then
         if lives <= 0 then
             state = "menu"
@@ -176,7 +176,6 @@ function add_ball()
         vx=20,
         vy=crnd(-20, 20)
     })
-    sfx(1)
 end
 
 function update_balls()
@@ -261,9 +260,9 @@ end
 -- drawing
 --
 
-function draw_play()
+function draw_world()
     cls(12)
-    local p={0xffff,0xafaf,0xa5a5,0x0505,0x0}
+    local p={0xffff,0xfafa,0x5a5a,0x5050,0x0}
     for n=1,#p do
         fillp(p[n]+0x.8)
         circfill(64-n*6,64+n*6,80-(n-1)*15,6)
@@ -275,15 +274,18 @@ function draw_play()
         circfill(100,500,400-(n-1)*6,11)
     end
     fillp()
+end
+
+function draw_play()
+    draw_world()
 
     foreach(ball_list, function(b)
         fillp(0xa5a5.8)
         circfill(b.x, b.y, b.r, b.c)
         fillp()
-        circ(b.x, b.y, b.r, 0)
+        circ(b.x, b.y, b.r, 1)
         circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
-
     if player.invincible > 0 and sin(4*player.invincible) > 0 then
         for i=1,16 do pal(i,7) end
     end
@@ -302,15 +304,24 @@ function draw_play()
         --circ(b.x, b.y, b.r, 13)
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
-    coprint(sc, 3, 4, 0)
+    coprint("score: "..tostr(sc), 3, 4, 7)
     for i = 1, lives do
         spr(32, 125 - 10*i, 3)
     end
 end
 
+function draw_highscores()
+    cprint("highscores:", 70)
+    cprint("1..."..tostr(dget(4)), 80)
+    cprint("2..."..tostr(dget(3)), 90)
+    cprint("3..."..tostr(dget(2)), 100)
+end
+
 config.menu.draw = function ()
-    cprint("main menu", 40)
-    cprint("press w", 50)
+    draw_world()
+    cprint("welcome!", 40)
+    cprint("press 🅾️ to play", 50, 9)
+    draw_highscores()
 end
 
 config.play.draw = function ()
@@ -320,18 +331,15 @@ end
 config.pause.draw = function ()
     draw_play()
     if lives <= 0 then
-        cprint("game over", 30)
+        cprint("game over", 30, 8)
         cprint("score: "..tostr(sc), 40)
-        cprint("highscores:", 70)
-        cprint("1..."..tostr(dget(4)), 80)
-        cprint("2..."..tostr(dget(3)), 90)
-        cprint("3..."..tostr(dget(2)), 100)
+        draw_highscores()
     elseif #ball_list == 0  and level > 1 then
         cprint("congrats! score: "..tostr(sc), 40)
     else
         cprint("level "..tostr(level), 40)
     end
-    cprint("press w", 50)
+    cprint("press 🅾️ to continue", 50, 9)
 end
 
 __gfx__
