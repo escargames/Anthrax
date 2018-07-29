@@ -77,7 +77,8 @@ function begin_play()
         x = 56,
         y = 104,
         sp = 1,
-        lf = 6
+        lf = 6,
+        invincible = 0,
     }
     sfx(0)
 end
@@ -111,6 +112,7 @@ end
 --
 
 function update_player()
+    player.invincible -= 1/30
     if (btn(0)) and player.x > 0 then
         player.x -= 2
     elseif (btn(1)) and player.x < 113 then
@@ -154,9 +156,13 @@ function update_balls()
             sfx(2)
         end
         -- collision with player
-        local dx, dy = b.x - player.x - 8, b.y - player.y - 12
-        if abs(dx) < b.r + 4 and abs(dy) < b.r then
-            sfx(7)
+        if player.invincible <= 0 then
+            local dx, dy = b.x - player.x - 8, b.y - player.y - 12
+            if abs(dx) < b.r + 4 and abs(dy) < b.r then
+                player.lf -= 1
+                player.invincible = 2
+                sfx(7)
+            end
         end
     end)
 end
@@ -220,7 +226,11 @@ config.play.draw = function ()
         circ(b.x, b.y, b.r, 13)
         circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
+    if player.invincible > 0 and rnd() > 0.5 then
+        pal(14,7)
+    end
     spr(player.sp, player.x, player.y, 2, 3)
+    pal(14)
     foreach(shot_list, function(b)
         spr(16, b.x-4, b.y-4)
         pset(b.x+crnd(-2,1), b.y+rnd(8), 7)
