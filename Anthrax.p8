@@ -49,6 +49,7 @@ function begin_play()
    state = "play"
    tm = 0
       ball_list = {}
+      shot_list = {}
       add_ball()
       player = {
         x = 56,
@@ -61,7 +62,7 @@ end
 function update_play()
   tm += 1/30
   if (btnp(3)) then
-    add_ball()
+    --add_ball()
   end
 
   if tm > 2 then
@@ -69,8 +70,13 @@ function update_play()
   end
 
   update_player()
+  update_shots()
 
-    if (btnp(4)) then
+  if (btnp(2)) then
+    add_shot()
+  end
+
+    if (btnp(3)) then
       state = "menu"
       sfx(0)
     end
@@ -127,6 +133,27 @@ function update_balls()
     end)
 end
 
+function add_shot()
+    add(shot_list, { 
+          x=player.x + 8,
+          y=player.y - 1,
+          vx=0,
+          vy=-100
+          })
+    sfx(1)
+end
+
+function update_shots()
+  foreach(shot_list, function(b)
+        if b.y < -50 then
+          del(shot_list, b)
+          return
+        end
+      b.x += b.vx / 30
+      b.y += b.vy / 30
+    end)
+end
+
 config.play.draw = function ()
   foreach(ball_list, function(b)
     circfill(b.x, b.y, b.r, b.c)
@@ -134,6 +161,11 @@ config.play.draw = function ()
     circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
   end)
   spr (player.sp, player.x, player.y, 2, 3)
+  foreach(shot_list, function(b)
+    circfill(b.x, b.y, 2, 1)
+    --circ(b.x, b.y, b.r, 13)
+    --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
+  end)
 end
 
 __gfx__
