@@ -3,7 +3,8 @@ version 16
 __lua__
 config = {
     menu = {bg = 2, tl = "menu", draw = function() end},
-    play = {bg = 3, tl = "play", draw = 0}
+    play = {bg = 3, tl = "play", draw = 0},
+    pause = {bg = 0, tl = "pause", draw = function() end}
 }
 
 
@@ -22,6 +23,10 @@ function _update()
   
     if (state == "play") then
         update_play()
+    end
+
+    if (state == "pause") then
+        update_pause()
     end
 end
 
@@ -102,8 +107,31 @@ function update_play()
         state = "menu"
         sfx(0)
     end
+
+    if (btnp(4)) then
+        state = "pause"
+        sfx(0)
+    end
 end
 
+--
+-- pause state handling
+--
+
+function update_pause()
+    config.pause.bg = config.play.bg
+    config.pause.draw = config.play.draw
+
+     if (btnp(3)) then
+        state = "menu"
+        sfx(0)
+    end
+
+    if (btnp(2)) then
+        state = "play"
+        sfx(0)
+    end
+end
 
 --
 -- player
