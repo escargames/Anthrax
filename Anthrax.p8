@@ -90,10 +90,7 @@ function update_play()
         --add_ball()
     end
 
-    if tm > 2 then
-        update_balls()
-    end
-
+    update_balls()
     update_player()
     update_shots()
 
