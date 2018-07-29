@@ -2,9 +2,9 @@ pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 config = {
-    menu = {bg = 2, tl = "menu", draw = function() end},
-    play = {bg = 3, tl = "play", draw = 0},
-    pause = {bg = 0, tl = "pause", draw = function() end}
+    menu = {bg = 2, tl = "menu"},
+    play = {bg = 3, tl = "play"},
+    pause = {bg = 0, tl = "pause"},
 }
 
 
@@ -19,20 +19,15 @@ end
 function _update()
     if (state == "menu") then
         update_menu()
-    end
-  
-    if (state == "play") then
+    elseif (state == "play") then
         update_play()
-    end
-
-    if (state == "pause") then
+    elseif (state == "pause") then
         update_pause()
     end
 end
 
 function _draw()
     cls(config[state].bg)
-    cprint(config[state].tl, 15)
     config[state].draw()
 end
 
@@ -60,7 +55,7 @@ end
 --
 
 function update_menu()
-    if (btnp(2)) then
+    if (btnp(4)) then
         begin_play()
     end
 end
@@ -71,7 +66,8 @@ end
 --
 
 function begin_play()
-    state = "play"
+    state = "pause"
+    level = 1
     tm = 0
     sc = 0
     ball_list = {}
@@ -105,14 +101,8 @@ function update_play()
         add_shot()
     end
 
-    if (btnp(3)) then
-        state = "menu"
-        sfx(0)
-    end
-
-    if (btnp(4)) then
+    if player.lf <= 0 then
         state = "pause"
-        sfx(0)
     end
 end
 
@@ -122,15 +112,13 @@ end
 
 function update_pause()
     config.pause.bg = config.play.bg
-    config.pause.draw = config.play.draw
 
-     if (btnp(3)) then
-        state = "menu"
-        sfx(0)
-    end
-
-    if (btnp(2)) then
-        state = "play"
+    if (btnp(4)) then
+        if player.lf <= 0 then
+            state = "menu"
+        else
+            state = "play"
+        end
         sfx(0)
     end
 end
@@ -248,7 +236,7 @@ end
 -- drawing
 --
 
-config.play.draw = function ()
+function draw_play()
     foreach(ball_list, function(b)
         circfill(b.x, b.y, b.r, b.c)
         circ(b.x, b.y, b.r, 13)
@@ -273,6 +261,25 @@ config.play.draw = function ()
     for i = 1, player.lf do
         spr(32, 125 - 10*i, 3)
     end
+end
+
+config.menu.draw = function ()
+    cprint("main menu", 40)
+    cprint("press w", 50)
+end
+
+config.play.draw = function ()
+    draw_play()
+end
+
+config.pause.draw = function ()
+    draw_play()
+    if player.lf <= 0 then
+      cprint("game over", 40)
+    else
+      cprint("level "..tostr(level), 40)
+    end
+    cprint("press w", 50)
 end
 
 __gfx__
