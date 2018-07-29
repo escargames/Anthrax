@@ -34,14 +34,17 @@ end
 --
 -- cool functions
 --
-
-function cprint(text, y, color)
-    local x = 64 - 2 * #text
+function coprint(text, x, y, color)
     print(text, x, y+1, 7)
     print(text, x, y-1, 7)
     print(text, x-1, y, 7)
     print(text, x+1, y, 7)
+    
     print(text, x, y, color)
+end
+function cprint(text, y, color)
+    local x = 64 - 2 * #text
+    coprint(text, x, y, color)
 end
 
 function crnd(min, max)
@@ -299,7 +302,7 @@ function draw_play()
         --circ(b.x, b.y, b.r, 13)
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
-    print(sc, 3, 4, 0)
+    coprint(sc, 3, 4, 0)
     for i = 1, lives do
         spr(32, 125 - 10*i, 3)
     end
