@@ -6,166 +6,206 @@ config = {
     play = {bg = 3, tl = "play", draw = 0}
 }
 
+
+--
+-- standard pico-8 workflow
+--
+
 function _init()
-  state = "menu"
+    state = "menu"
 end
 
 function _update()
-  if (state == "menu") then
-    update_menu()
-  end
+    if (state == "menu") then
+        update_menu()
+    end
   
-  if (state == "play") then
-    update_play()
-  end
+    if (state == "play") then
+        update_play()
+    end
 end
 
 function _draw()
-  cls(config[state].bg)
-  cprint(config[state].tl, 10)
-  config[state].draw()
+    cls(config[state].bg)
+    cprint(config[state].tl, 10)
+    config[state].draw()
 end
 
+
+--
+-- cool functions
+--
+
 function cprint(text, y, color)
-  local x = 64 - 2 * #text
-  print(text, x, y+1, 7)
-  print(text, x, y-1, 7)
-  print(text, x-1, y, 7)
-  print(text, x+1, y, 7)
-  print(text, x, y, color)
+    local x = 64 - 2 * #text
+    print(text, x, y+1, 7)
+    print(text, x, y-1, 7)
+    print(text, x-1, y, 7)
+    print(text, x+1, y, 7)
+    print(text, x, y, color)
 end
 
 function crnd(min, max)
-  return min + rnd(max-min)
+    return min + rnd(max-min)
 end
+
+
+--
+-- menu state handling
+--
 
 function update_menu()
-  if (btnp(2)) then
-   begin_play()
-  end
+    if (btnp(2)) then
+        begin_play()
+    end
 end
 
+
+--
+-- play state handling
+--
+
 function begin_play()
-   state = "play"
-   tm = 0
-      ball_list = {}
-      shot_list = {}
-      add_ball()
-      player = {
+    state = "play"
+    tm = 0
+    ball_list = {}
+    shot_list = {}
+    add_ball()
+    player = {
         x = 56,
         y = 104,
         sp = 1,
-      }
-      sfx(0)
+    }
+    sfx(0)
 end
 
 function update_play()
-  tm += 1/30
-  if (btnp(3)) then
-    --add_ball()
-  end
+    tm += 1/30
+    if (btnp(3)) then
+        --add_ball()
+    end
 
-  if tm > 2 then
-    update_balls()
-  end
+    if tm > 2 then
+        update_balls()
+    end
 
-  update_player()
-  update_shots()
+    update_player()
+    update_shots()
 
-  if (btnp(2)) then
-    add_shot()
-  end
+    if (btnp(2)) then
+        add_shot()
+    end
 
     if (btnp(3)) then
-      state = "menu"
-      sfx(0)
+        state = "menu"
+        sfx(0)
     end
 end
+
+
+--
+-- player
+--
 
 function update_player()
     if (btn(0)) and player.x > 0 then
-      player.x -= 2
+        player.x -= 2
     elseif (btn(1)) and player.x < 113 then
-      player.x += 2
+        player.x += 2
     end
 end
 
+
+--
+-- balls
+--
+
 function add_ball()
     add(ball_list, { 
-          x=crnd(10, 118),
-          y=crnd(16, 48),
-          c=crnd(9,13),
-          l=6,
-          r=10,
-          vx=20,
-          vy=crnd(-20, 20)
-          })
+        x=crnd(10, 118),
+        y=crnd(16, 48),
+        c=crnd(9,13),
+        l=6,
+        r=10,
+        vx=20,
+        vy=crnd(-20, 20)
+    })
     sfx(1)
 end
 
 function update_balls()
-  foreach(ball_list, function(b)
-      b.l -= 1/30
-      if b.l < 0 then
-        if b.r < 5 then
-          del(ball_list, b)
-          return
+    foreach(ball_list, function(b)
+        b.l -= 1/30
+        if b.l < 0 then
+            if b.r < 5 then
+                del(ball_list, b)
+                return
+            end
+            b.l = 5
+            b.r *= 5/8
+            add(ball_list, { x=b.x, y=b.y, c=b.c, l=b.l, r=b.r, vx=-b.vx, vy=b.vy })
         end
-        b.l = 5
-        b.r *= 5/8
-        add(ball_list, { x=b.x, y=b.y, c=b.c, l=b.l, r=b.r, vx=-b.vx, vy=b.vy })
-      end
-      b.vy += 5
-      b.x += b.vx / 30
-      b.y += b.vy / 30
-      if b.vx < 0 and (b.x - b.r) < 0 then
-        b.vx = - b.vx
-        sfx(2)
-      end
-       if b.vx > 0 and (b.x + b.r) > 128 then
-        b.vx = - b.vx
-        sfx(2)
-      end
-       if b.vy > 0 and (b.y + b.r) > 128 then
-        b.vy = - b.vy
-        b.y -= 2*(b.y + b.r - 128)
-      end
+        b.vy += 5
+        b.x += b.vx / 30
+        b.y += b.vy / 30
+        if b.vx < 0 and (b.x - b.r) < 0 then
+            b.vx = - b.vx
+            sfx(2)
+        end
+        if b.vx > 0 and (b.x + b.r) > 128 then
+            b.vx = - b.vx
+            sfx(2)
+        end
+        if b.vy > 0 and (b.y + b.r) > 128 then
+            b.vy = - b.vy
+            b.y -= 2*(b.y + b.r - 128)
+        end
     end)
 end
 
+
+--
+-- shots
+--
+
 function add_shot()
     add(shot_list, { 
-          x=player.x + 8,
-          y=player.y - 1,
-          vx=0,
-          vy=-100
-          })
+        x=player.x + 8,
+        y=player.y - 1,
+        vx=0,
+        vy=-100
+    })
     sfx(1)
 end
 
 function update_shots()
-  foreach(shot_list, function(b)
+    foreach(shot_list, function(b)
         if b.y < -50 then
-          del(shot_list, b)
-          return
+            del(shot_list, b)
+            return
         end
-      b.x += b.vx / 30
-      b.y += b.vy / 30
+        b.x += b.vx / 30
+        b.y += b.vy / 30
     end)
 end
 
+
+--
+-- drawing
+--
+
 config.play.draw = function ()
-  foreach(ball_list, function(b)
-    circfill(b.x, b.y, b.r, b.c)
-    circ(b.x, b.y, b.r, 13)
-    circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
-  end)
-  spr (player.sp, player.x, player.y, 2, 3)
-  foreach(shot_list, function(b)
-    circfill(b.x, b.y, 2, 1)
-    --circ(b.x, b.y, b.r, 13)
-    --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
-  end)
+    foreach(ball_list, function(b)
+        circfill(b.x, b.y, b.r, b.c)
+        circ(b.x, b.y, b.r, 13)
+        circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
+    end)
+    spr(player.sp, player.x, player.y, 2, 3)
+    foreach(shot_list, function(b)
+        circfill(b.x, b.y, 2, 1)
+        --circ(b.x, b.y, b.r, 13)
+        --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
+    end)
 end
 
 __gfx__
