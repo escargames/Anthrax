@@ -77,11 +77,13 @@ function begin_play()
     ball_list = {}
     shot_list = {}
     add_ball()
+    add_ball()
     player = {
         x = 56,
         y = 104,
         sp = 1,
-        lf = 6
+        lf = 6,
+        invincible = 0,
     }
     sfx(0)
 end
@@ -138,6 +140,7 @@ end
 --
 
 function update_player()
+    player.invincible -= 1/30
     if (btn(0)) and player.x > 0 then
         player.x -= 2
     elseif (btn(1)) and player.x < 113 then
@@ -180,6 +183,15 @@ function update_balls()
             b.y -= 2*(b.y + b.r - 128)
             sfx(2)
         end
+        -- collision with player
+        if player.invincible <= 0 then
+            local dx, dy = b.x - player.x - 8, b.y - player.y - 12
+            if abs(dx) < b.r + 4 and abs(dy) < b.r then
+                player.lf -= 1
+                player.invincible = 2
+                sfx(7)
+            end
+        end
     end)
 end
 
@@ -208,14 +220,14 @@ function update_shots()
         end
         for i = 1,#ball_list do
             local b=ball_list[i]
-            local dx, dy = s.x - b.x, s.y - b.y
-            if dx*dx + dy*dy < b.r*b.r + 2*2 then
+            local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
+            -- use /256 to avoid overflows
+            if dx/256*dx + dy/256*dy < dr/256*dr then
                 -- destroy ball or split ball
                 if b.r < 5 then
                     del(ball_list, b)
                     sc += 20
                     sfx(5)
-                    
                 else
                     b.r *= 5/8
                     b.vy = - abs(b.vy)
@@ -242,7 +254,11 @@ config.play.draw = function ()
         circ(b.x, b.y, b.r, 13)
         circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
+    if player.invincible > 0 and rnd() > 0.5 then
+        pal(14,7)
+    end
     spr(player.sp, player.x, player.y, 2, 3)
+    pal(14)
     foreach(shot_list, function(b)
         spr(16, b.x-4, b.y-4)
         pset(b.x+crnd(-2,1), b.y+rnd(8), 7)
@@ -292,3 +308,4 @@ __sfx__
 000500002d640254302a6602243026650000000000000000000001940000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00020000243201e3301a3201533012320204002860000000000000360001600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 000200001e75019750135500d75000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000400001d0102301028020290201c02020030230302503017030190301b0501d05013050110500d0500b05009050080500405004050030500305003030020300103000020000100001000000000000000000000
