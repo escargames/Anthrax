@@ -114,6 +114,7 @@ function update_play()
     if #ball_list == 0 then
         shot_list = {}
         level += 1
+        lives += 1
         state = "pause"
     end
 
