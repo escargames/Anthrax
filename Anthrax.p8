@@ -105,11 +105,13 @@ function update_play()
     end
 
     if #ball_list == 0 then
+        shot_list = {}
         level += 1
         state = "pause"
     end
 
     if lives <= 0 then
+        shot_list = {}
         state = "pause"
         for i = 2,4 do
             if dget(i) < sc then
@@ -262,7 +264,7 @@ function draw_play()
         circ(b.x, b.y, b.r, 13)
         circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
-    if player.invincible > 0 and rnd() > 0.5 then
+    if player.invincible > 0 and sin(4*player.invincible) > 0 then
         for i=1,16 do pal(i,7) end
     end
     spr(33, player.x - 4, player.y - 25 + sin(2*player.walk), 1, 1, player.dir)
