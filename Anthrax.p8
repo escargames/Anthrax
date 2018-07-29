@@ -179,14 +179,14 @@ function update_shots()
         end
         for i = 1,#ball_list do
             local b=ball_list[i]
-            local dx, dy = s.x - b.x, s.y - b.y
-            if dx*dx + dy*dy < b.r*b.r + 2*2 then
+            local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
+            -- use /256 to avoid overflows
+            if dx/256*dx + dy/256*dy < dr/256*dr then
                 -- destroy ball or split ball
                 if b.r < 5 then
                     del(ball_list, b)
                     sc += 20
                     sfx(5)
-                    
                 else
                     b.r *= 5/8
                     b.vy = - abs(b.vy)
