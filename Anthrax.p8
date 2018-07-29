@@ -7,13 +7,13 @@ config = {
     pause = {bg = 0, tl = "pause"},
 }
 
-
 --
 -- standard pico-8 workflow
 --
 
 function _init()
     state = "menu"
+    cartdata("anthrax")
 end
 
 function _update()
@@ -31,7 +31,6 @@ function _draw()
     config[state].draw()
 end
 
-
 --
 -- cool functions
 --
@@ -48,7 +47,6 @@ end
 function crnd(min, max)
     return min + rnd(max-min)
 end
-
 
 --
 -- menu state handling
@@ -105,10 +103,17 @@ function update_play()
 
     if #ball_list == 0 then
         level += 1
+        state = "pause"
     end
 
-    if lives <= 0 or #ball_list == 0 then
+    if lives <= 0 then
         state = "pause"
+        for i = 2,4 do
+            if dget(i) < sc then
+                dset(i-1,dget(i))
+                dset(i, sc)
+            end
+        end    
     end      
 end
 
@@ -239,7 +244,6 @@ function update_shots()
     end)
 end
 
-
 --
 -- drawing
 --
@@ -285,6 +289,9 @@ config.pause.draw = function ()
     if lives <= 0 then
         cprint("game over", 30)
         cprint("score: "..tostr(sc), 40)
+        cprint("highscores: 1."..tostr(dget(4)), 80)
+        cprint("2."..tostr(dget(3)), 90)
+        cprint("3."..tostr(dget(2)), 100)
     elseif #ball_list == 0  and level > 1 then
         cprint("congrats! score: "..tostr(sc), 40)
     else
