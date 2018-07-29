@@ -56,6 +56,7 @@ end
 
 function update_menu()
     if (btnp(4)) then
+        new_game()
         begin_play()
     end
 end
@@ -65,20 +66,24 @@ end
 -- play state handling
 --
 
+function new_game()
+    level = 1
+    sc = 0
+    lives = 3
+end
+
 function begin_play()
     state = "pause"
-    level = 1
     tm = 0
-    sc = 0
     ball_list = {}
     shot_list = {}
-    add_ball()
-    add_ball()
+    for i=1,level do
+        add_ball()
+    end
     player = {
         x = 64,
         y = 128,
         sp = 1,
-        lf = 6,
         invincible = 0,
     }
     sfx(0)
@@ -101,7 +106,7 @@ function update_play()
         add_shot()
     end
 
-    if player.lf <= 0 then
+    if lives <= 0 then
         state = "pause"
     end
 end
@@ -114,7 +119,7 @@ function update_pause()
     config.pause.bg = config.play.bg
 
     if (btnp(4)) then
-        if player.lf <= 0 then
+        if lives <= 0 then
             state = "menu"
         else
             state = "play"
@@ -175,7 +180,7 @@ function update_balls()
         if player.invincible <= 0 then
             local dx, dy = b.x - player.x, b.y - player.y + 12
             if abs(dx) < b.r + 4 and abs(dy) < b.r then
-                player.lf -= 1
+                lives -= 1
                 player.invincible = 2
                 sfx(7)
             end
@@ -258,7 +263,7 @@ function draw_play()
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
     print(sc, 3, 4, 0)
-    for i = 1, player.lf do
+    for i = 1, lives do
         spr(32, 125 - 10*i, 3)
     end
 end
@@ -274,7 +279,7 @@ end
 
 config.pause.draw = function ()
     draw_play()
-    if player.lf <= 0 then
+    if lives <= 0 then
       cprint("game over", 40)
     else
       cprint("level "..tostr(level), 40)
