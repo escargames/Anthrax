@@ -6,29 +6,86 @@ config = {
     play = {bg = 3, tl = "play", draw = 0}
 }
 
-player = {
-    x = 56,
-    y = 104,
-    sp = 1,
-}
-
 function _init()
   state = "menu"
 end
 
 function _update()
   if (state == "menu") then
-    if (btnp(2)) then
-      state = "play"
+    update_menu()
+  end
+  
+  if (state == "play") then
+    update_play()
+  end
+end
+
+function _draw()
+  cls(config[state].bg)
+  cprint(config[state].tl, 10)
+  config[state].draw()
+end
+
+function cprint(text, y, color)
+  local x = 64 - 2 * #text
+  print(text, x, y+1, 7)
+  print(text, x, y-1, 7)
+  print(text, x-1, y, 7)
+  print(text, x+1, y, 7)
+  print(text, x, y, color)
+end
+
+function crnd(min, max)
+  return min + rnd(max-min)
+end
+
+function update_menu()
+  if (btnp(2)) then
+   begin_play()
+  end
+end
+
+function begin_play()
+   state = "play"
+   tm = 0
       ball_list = {}
+      add_ball()
+      player = {
+        x = 56,
+        y = 104,
+        sp = 1,
+      }
+      sfx(0)
+end
+
+function update_play()
+  tm += 1/30
+  if (btnp(3)) then
+    add_ball()
+  end
+
+  if tm > 2 then
+    update_balls()
+  end
+
+  update_player()
+
+    if (btnp(4)) then
+      state = "menu"
       sfx(0)
     end
-  end
-  --
-  --
-  if (state == "play") then
-    if (btnp(3)) then
-      add(ball_list, { 
+end
+
+function update_player()
+    if (btn(0)) and player.x > 0 then
+      player.x -= 2
+    elseif (btn(1)) and player.x < 113 then
+      player.x += 2
+    end
+end
+
+function add_ball()
+    add(ball_list, { 
           x=crnd(10, 118),
           y=crnd(16, 48),
           c=crnd(9,13),
@@ -37,10 +94,11 @@ function _update()
           vx=20,
           vy=crnd(-20, 20)
           })
-      sfx(1)
-    end
+    sfx(1)
+end
 
-    foreach(ball_list, function(b)
+function update_balls()
+  foreach(ball_list, function(b)
       b.l -= 1/30
       if b.l < 0 then
         if b.r < 5 then
@@ -67,37 +125,6 @@ function _update()
         b.y -= 2*(b.y + b.r - 128)
       end
     end)
-    
-    if (btn(0)) and player.x > 0 then
-      player.x -= 2
-    elseif (btn(1)) and player.x < 113 then
-      player.x += 2
-    end
-
-    if (btnp(4)) then
-      state = "menu"
-      sfx(0)
-    end
-  end
-end
-
-function _draw()
-  cls(config[state].bg)
-  cprint(config[state].tl, 10)
-  config[state].draw()
-end
-
-function cprint(text, y, color)
-  local x = 64 - 2 * #text
-  print(text, x, y+1, 7)
-  print(text, x, y-1, 7)
-  print(text, x-1, y, 7)
-  print(text, x+1, y, 7)
-  print(text, x, y, color)
-end
-
-function crnd(min, max)
-  return min + rnd(max-min)
 end
 
 config.play.draw = function ()
