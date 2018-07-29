@@ -33,6 +33,7 @@ function _update()
     end
 
     foreach(ball_list, function(b)
+      b.vy += 5
       b.x += b.vx / 30
       b.y += b.vy / 30
       if b.vx < 0 and (b.x - b.r) < 0 then
@@ -43,6 +44,7 @@ function _update()
       end
        if b.vy > 0 and (b.y + b.r) > 128 then
         b.vy = - b.vy
+        b.y -= 2*(b.y + b.r - 128)
       end
     end)
     --
