@@ -23,16 +23,28 @@ function _update()
   if (state == "play") then
     if (btnp(2)) then
       add(ball_list, { 
-          x=crnd(10, 118), 
-          y=crnd(10, 118), 
-          r=crnd(5,10),
-          vx=crnd(-20, 20),
+          x=crnd(10, 118),
+          y=crnd(16, 48),
+          c=crnd(9,13),
+          l=6,
+          r=10,
+          vx=20,
           vy=crnd(-20, 20)
           })
       sfx(1)
     end
 
     foreach(ball_list, function(b)
+      b.l -= 1/30
+      if b.l < 0 then
+        if b.r < 5 then
+          del(ball_list, b)
+          return
+        end
+        b.l = 5
+        b.r *= 5/8
+        add(ball_list, { x=b.x, y=b.y, c=b.c, l=b.l, r=b.r, vx=-b.vx, vy=b.vy })
+      end
       b.vy += 5
       b.x += b.vx / 30
       b.y += b.vy / 30
@@ -76,7 +88,7 @@ end
 
 config.play.draw = function ()
   foreach(ball_list, function(b)
-    circfill(b.x, b.y, b.r, 12)
+    circfill(b.x, b.y, b.r, b.c)
     circ(b.x, b.y, b.r, 13)
     circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
   end)
