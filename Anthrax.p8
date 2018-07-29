@@ -68,6 +68,7 @@ end
 function begin_play()
     state = "play"
     tm = 0
+    sc = 0
     ball_list = {}
     shot_list = {}
     add_ball()
@@ -183,11 +184,14 @@ function update_shots()
                 -- destroy ball or split ball
                 if b.r < 5 then
                     del(ball_list, b)
+                    sc += 20
                     sfx(5)
+                    
                 else
                     b.r *= 5/8
                     b.vy = - abs(b.vy)
                     add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=-b.vx, vy=b.vy })
+                    sc += 10
                     sfx(6)
                 end
                 -- destroy shot
@@ -220,6 +224,7 @@ config.play.draw = function ()
         --circ(b.x, b.y, b.r, 13)
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
+    print(sc, 3, 3, 0)
 end
 
 __gfx__
