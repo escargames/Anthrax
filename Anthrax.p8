@@ -309,8 +309,7 @@ function draw_play()
     end)
     coprint("score: "..tostr(sc), 3, 4, 7)
     for i = 1, lives do
-	j = 6 - lives
-        spr(32, 125 - 7*i - j, 3)
+        spr(32, 119 - 7*i - lives, 3)
     end
 end
 
