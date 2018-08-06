@@ -310,8 +310,10 @@ function draw_play()
     coprint("score: "..tostr(sc), 3, 4, 7)
     for i = 1, lives do
 	if i < 7 then
-        spr(32, 125 - 10*i, 3)
-	else spr(32, 125 - 10*i, 10)
+        	spr(32, 125 - 10*i, 3)
+	else 
+		spr(32, 125 - 10*i, 10)
+	end
     end
 end
 
