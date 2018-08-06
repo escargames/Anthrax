@@ -1,4 +1,4 @@
-﻿pico-8 cartridge // http://www.pico-8.com
+pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 --anthrax
@@ -308,8 +308,13 @@ function draw_play()
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
     coprint("score: "..tostr(sc), 3, 4, 7)
-    for i = 1, lives do
-        spr(32, 119 - 7*i - lives, 3)
+    spr(32, 118, 3)
+    for i = 2, lives do
+        if lives < 5 then
+            spr(32, 128 - 10*i, 3)
+        else
+            spr(32, 118 - flr(50*(i-1)/lives), 3)
+        end
     end
 end
 
