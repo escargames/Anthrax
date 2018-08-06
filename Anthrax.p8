@@ -1,4 +1,4 @@
-pico-8 cartridge // http://www.pico-8.com
+﻿pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 --anthrax
@@ -309,7 +309,8 @@ function draw_play()
     end)
     coprint("score: "..tostr(sc), 3, 4, 7)
     for i = 1, lives do
-        spr(32, 125 - 10*i, 3)
+	j = 6 - lives
+        spr(32, 125 - 7*i - j, 3)
     end
 end
 
