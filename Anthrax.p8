@@ -313,7 +313,7 @@ function draw_play()
         if lives < 5 then
             spr(32, 128 - 10*i, 3)
         else
-            spr(32, 118 - flr(50*(i-1)/lives), 3)
+            spr(32, 119 - (i-1)*flr(50/lives+0.99), 3)
         end
     end
 end
