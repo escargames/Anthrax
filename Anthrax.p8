@@ -312,7 +312,7 @@ function draw_play()
 	if i < 7 then
         spr(32, 125 - 10*i, 3)
 	else 
-		spr(32, 125 - 10*(i-6), 10)
+		spr(32, 125 - 10*(i-6), 13)
 	end
     end
 end
