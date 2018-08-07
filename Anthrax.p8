@@ -121,9 +121,9 @@ function update_play()
     if lives <= 0 then
         shot_list = {}
         state = "pause"
-        for i = 2,4 do
+        for i = 3,1,-1 do
             if dget(i) < sc then
-                dset(i-1,dget(i))
+                dset(i+1,dget(i))
                 dset(i, sc)
             end
         end    
@@ -315,9 +315,9 @@ end
 
 function draw_highscores()
     cprint("highscores:", 70)
-    cprint("1..."..tostr(dget(4)), 80)
-    cprint("2..."..tostr(dget(3)), 90)
-    cprint("3..."..tostr(dget(2)), 100)
+    cprint("1..."..tostr(dget(1)), 80)
+    cprint("2..."..tostr(dget(2)), 90)
+    cprint("3..."..tostr(dget(3)), 100)
 end
 
 config.menu.draw = function ()
