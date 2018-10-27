@@ -111,11 +111,12 @@ function update_play()
     end
 
     if not hourglass then
-        update_balls()
+        move_balls()
     elseif hourglass > 0 then
         hourglass -= 1
     else hourglass = false
     end
+    update_balls()
     update_player()
     update_shots()
     update_bonus()
@@ -195,7 +196,7 @@ function add_ball()
     })
 end
 
-function update_balls()
+function move_balls()
     foreach(ball_list, function(b)
         b.vy += 5
         b.x += b.vx / 30
@@ -213,6 +214,16 @@ function update_balls()
             b.y -= 2*(b.y + b.r - 128)
             sfx(2)
         end
+    end)
+end
+
+function update_balls()
+    foreach(ball_list, function(b)
+    -- destroy ball
+        if b.dead == true then
+            del(ball_list, b)
+        end
+
         -- collision with player
         if player.invincible <= 0 then
             local dx, dy = b.x - player.x, b.y - player.y + 12
@@ -224,7 +235,6 @@ function update_balls()
         end
     end)
 end
-
 
 --
 -- shots
@@ -259,7 +269,7 @@ function update_shots()
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
-                    del(ball_list, b)
+                    b.dead = true
                     sc += 20
                     sfx(5)
                 else
@@ -314,7 +324,7 @@ function activate_bonus()
             elseif b.type == 1 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
-                        del(ball_list, ball) 
+                        ball.dead = true
                     end
                 end)
             end
