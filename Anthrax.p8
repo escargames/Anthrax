@@ -55,6 +55,11 @@ function crnd(min, max)
     return min + rnd(max-min)
 end
 
+function ccrnd(tab)  -- takes a tab and choose randomly between the elements of the table
+  n = flr(crnd(1,#tab+1))
+  return tab[n]
+end
+
 --
 -- menu state handling
 --
@@ -75,10 +80,12 @@ function new_game()
     level = 1
     sc = 0
     lives = 3
+    bonus = {}
 end
 
 function begin_play()
     state = "pause"
+    hourglass = false
     tm = 0
     ball_list = {}
     shot_list = {}
@@ -103,9 +110,16 @@ function update_play()
         --add_ball()
     end
 
-    update_balls()
+    if not hourglass then
+        update_balls()
+    elseif hourglass > 0 then
+        hourglass -= 1
+    else hourglass = false
+    end
     update_player()
     update_shots()
+    update_bonus()
+    activate_bonus()
 
     if (btnp(5)) then
         add_shot()
@@ -239,6 +253,10 @@ function update_shots()
             local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
             -- use /256 to avoid overflows
             if dx/256*dx + dy/256*dy < dr/256*dr then
+                -- sometimes bonus
+                    if rnd() < 0.1 then
+                        add(bonus, { type = ccrnd({0, 1}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
+                    end
                 -- destroy ball or split ball
                 if b.r < 5 then
                     del(ball_list, b)
@@ -255,6 +273,53 @@ function update_shots()
                 del(shot_list, s)
                 break
             end
+        end
+    end)
+end
+
+--
+-- bonus
+--
+
+function update_bonus()
+    if not hourglass then
+        foreach(bonus, function(b)
+            if b.vy > 0 and (b.y + 9) > 128 then
+                b.vy = 0
+                b.vx = 0
+                b.y = 120
+            else
+                b.vy += 5
+                b.x += b.vx / 30
+                b.y += b.vy / 30
+            end
+            if b.vx < 0 and b.x < 0 then
+                b.vx = - b.vx
+                sfx(2)
+            end
+            if b.vx > 0 and (b.x + 7) > 128 then
+                b.vx = - b.vx
+                sfx(2)
+            end
+        end)
+    end
+end
+
+function activate_bonus()
+    foreach(bonus, function(b)
+        local dx, dy = b.x - player.x, b.y - player.y + 12
+        if abs(dx) < 7 and abs(dy) < 8 then
+            if b.type == 0 then -- bonus is an hourglass
+                hourglass = 60
+            elseif b.type == 1 then -- bonus is a bomb
+                foreach(ball_list, function(ball)
+                    if ball.r < 5 then
+                        del(ball_list, ball) 
+                    end
+                end)
+            end
+            del(bonus, b)
+            sfx(7)
         end
     end)
 end
@@ -289,6 +354,15 @@ function draw_play()
         circ(b.x, b.y, b.r, 1)
         circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
+
+    foreach(bonus, function(b)
+        if b.type == 0 then
+            spr(9, b.x, b.y)
+        elseif b.type == 1 then
+            spr(10, b.x, b.y)
+        end
+    end)
+
     if player.invincible > 0 and sin(4*player.invincible) > 0 then
         for i=1,16 do pal(i,7) end
     end
@@ -307,6 +381,7 @@ function draw_play()
         --circ(b.x, b.y, b.r, 13)
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
+
     coprint("score: "..tostr(sc), 3, 4, 7)
     if lives < 7 then
         for i = 1, lives do
@@ -314,7 +389,7 @@ function draw_play()
         end
 	else
 		    spr(32, 115, 3)
-		    coprint(lives.."x", 105, 6)
+		    coprint(lives, 110, 5)
     end
 end
 
@@ -323,6 +398,10 @@ function draw_highscores()
     cprint("1..."..tostr(dget(1)), 80)
     cprint("2..."..tostr(dget(2)), 90)
     cprint("3..."..tostr(dget(3)), 100)
+end
+
+function draw_debug()
+    print ("bonus  "..#bonus, 80, 120)
 end
 
 config.menu.draw = function ()
@@ -334,6 +413,7 @@ end
 
 config.play.draw = function ()
     draw_play()
+    draw_debug()
 end
 
 config.pause.draw = function ()
@@ -351,14 +431,14 @@ config.pause.draw = function ()
 end
 
 __gfx__
-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-00700700000002222240000000009999940000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-0007700000022244449400000009aaaaa42400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-0007700000024999997940000099aa77794290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-00700700002499949999400002299999944290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-00000000002299949999400002944999424290000000442222240000000002444224000000000000000000000000000000000000000000000000000000000000
-0000000000249a9999924000092aaa977929900000009949aa990000000029949a99000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000055555550000066900000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000d00000d0000600000000000000000000000000000000000000000000
+0070070000000222224000000000999994000000000000000000000000000000000000000dfffd00005550000000000000000000000000000000000000000000
+0007700000022244449400000009aaaaa42400000000000000000000000000000000000000dfd000055555000000000000000000000000000000000000000000
+0007700000024999997940000099aa77794290000000000000000000000000000000000000d0d000555555500000000000000000000000000000000000000000
+0070070000249994999940000229999994429000000000000000000000000000000000000d0f0d00575555500000000000000000000000000000000000000000
+000000000022999499994000029449994242900000004422222400000000024442240000dfffffd0057555000000000000000000000000000000000000000000
+0000000000249a9999924000092aaa977929900000009949aa990000000029949a99000055555550005550000000000000000000000000000000000000000000
 0022200000499a999994400009922999449a900000009a499aa9900000004a949aa9900000000000000000000000000000000000000000000000000000000000
 027aa200004999a499424000029944444aa9200000099a9499aa90000000499499a9900000000000000000000000000000000000000000000000000000000000
 27a777200044999949942000029aaa99a992000000049aa9442ef60000004ea9499ff60000000000000000000000000000000000000000000000000000000000
