@@ -86,6 +86,7 @@ end
 function begin_play()
     state = "pause"
     hourglass = false
+    forcefield = false
     tm = 0
     ball_list = {}
     shot_list = {}
@@ -191,7 +192,7 @@ function add_ball()
         y=crnd(16, 48),
         c=crnd(9,13),
         r=10,
-        vx=20,
+        vx=ccrnd({-20, 20}),
         vy=crnd(-20, 20)
     })
 end
@@ -265,7 +266,7 @@ function update_shots()
             if dx/256*dx + dy/256*dy < dr/256*dr then
                 -- sometimes bonus
                     if rnd() < 0.1 then
-                        add(bonus, { type = ccrnd({0, 1}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
+                        add(bonus, { type = ccrnd({0, 1, 2}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
@@ -327,6 +328,8 @@ function activate_bonus()
                         ball.dead = true
                     end
                 end)
+            elseif b.type == 2 then -- bonus is a force field
+                forcefield = 60
             end
             del(bonus, b)
             sfx(7)
@@ -370,6 +373,8 @@ function draw_play()
             spr(9, b.x, b.y)
         elseif b.type == 1 then
             spr(10, b.x, b.y)
+        elseif b.type == 2 then
+            spr(25, b.x, b.y)
         end
     end)
 
@@ -423,7 +428,7 @@ end
 
 config.play.draw = function ()
     draw_play()
-    draw_debug()
+    --draw_debug()
 end
 
 config.pause.draw = function ()
