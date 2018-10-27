@@ -308,8 +308,13 @@ function draw_play()
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
     coprint("score: "..tostr(sc), 3, 4, 7)
-    for i = 1, lives do
-        spr(32, 125 - 10*i, 3)
+    if lives < 7 then
+        for i = 1, lives do
+        	spr(32, 125 - 10*i, 3)
+        end
+	else
+		    spr(32, 115, 3)
+		    coprint(lives.."x", 105, 6)
     end
 end
 
