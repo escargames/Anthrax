@@ -228,21 +228,23 @@ end
 
 function move_balls()
     foreach(ball_list, function(b)
-        b.vy += 5
-        b.x += b.vx / 30
-        b.y += b.vy / 30
-        if b.vx < 0 and (b.x - b.r) < 0 then
-            b.vx = - b.vx
-            sfx(2)
-        end
-        if b.vx > 0 and (b.x + b.r) > 128 then
-            b.vx = - b.vx
-            sfx(2)
-        end
-        if b.vy > 0 and (b.y + b.r) > 128 then
-            b.vy = - b.vy
-            b.y -= 2*(b.y + b.r - 128)
-            sfx(2)
+        if not b.dead then
+            b.vy += 5
+            b.x += b.vx / 30
+            b.y += b.vy / 30
+            if b.vx < 0 and (b.x - b.r) < 0 then
+                b.vx = - b.vx
+                sfx(2)
+            end
+            if b.vx > 0 and (b.x + b.r) > 128 then
+                b.vx = - b.vx
+                sfx(2)
+            end
+            if b.vy > 0 and (b.y + b.r) > 128 then
+                b.vy = - b.vy
+                b.y -= 2*(b.y + b.r - 128)
+                sfx(2)
+            end
         end
     end)
 end
@@ -255,8 +257,14 @@ function update_balls()
         else b.bounced = 0
         end
 
+        if b.dead and b.dead > 1 then
+            b.dead -= 1
+        elseif b.dead then
+            b.dead = 1
+        end
+
         -- destroy ball
-        if b.dead == true then
+        if b.dead == 1 then
             del(ball_list, b)
         end
 
@@ -317,13 +325,15 @@ function update_shots()
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
-                    b.dead = true
+                    b.dead = 31
                     sc += 20
                     sfx(5)
                 else
                     b.r *= 5/8
+                    b.dead = 31
                     b.vy = - abs(b.vy)
                     add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=-b.vx, vy=b.vy, bounced = 0 })
+                    add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=b.vx, vy=b.vy, bounced = 0 })
                     sc += 10
                     sfx(6)
                 end
@@ -351,7 +361,7 @@ function update_bonus()
                 b.x += b.vx / 30
                 b.y += b.vy / 30
             end
-            if b.vx < 0 and b.x < 0 then
+            if b.vx < 0 and b.x < 2 then
                 b.vx = - b.vx
                 sfx(2)
             end
@@ -372,7 +382,7 @@ function activate_bonus()
             elseif b.type == 1 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
-                        ball.dead = true
+                        ball.dead = 31
                     end
                 end)
             elseif b.type == 2 then -- bonus is a force field
@@ -407,11 +417,22 @@ function draw_play()
     draw_world()
 
     foreach(ball_list, function(b)
-        fillp(0xa5a5.8)
-        circfill(b.x, b.y, b.r, b.c)
-        fillp()
-        circ(b.x, b.y, b.r, 1)
-        circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
+        if not b.dead or b.dead == 1 then
+            fillp(0xa5a5.8)
+            circfill(b.x, b.y, b.r, b.c)
+            fillp()
+            circ(b.x, b.y, b.r, 1)
+            circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
+        end
+        
+        if b.dead and b.dead > 1 then
+            local deadbubbles = 5
+            for i = 1, deadbubbles do
+                fillp(0xa5a5.8)
+                circfill(b.x + crnd(-(b.r - 1), b.r - 1), b.y + crnd(-(b.r - 1), b.r - 1), crnd(1, b.r - 1), b.c)
+                fillp()
+            end
+        end
     end)
 
     foreach(bonus, function(b)
@@ -499,7 +520,7 @@ config.pause.draw = function ()
     else
         cprint("level "..tostr(level), 40)
     end
-    cprint("press 🅾️ to continue", 50, 9)
+    cprint("press 🅾️ to continue", 60, 9)
 end
 
 __gfx__
@@ -524,11 +545,11 @@ __gfx__
 01ee188100670000000000000000000000000000eee5eeeeeeeeeeee07666666d0eeeeee00000000000000000000000000000000000000000000000000000000
 01e8888100670000000000007000000000000000eeee5eeeeeeeeeee07666666d0eeeeee00000000000000000000000000000000000000000000000000000000
 01e8882100650000000000007000000000000000ee00000eeeeeeeee07666666d0eeeeee00000000000000000000000000000000000000000000000000000000
-0018821000650000000000007000000000000000e0000000eeeeeeee57666666d0eeeeee00000000000000000000000000000000000000000000000000000000
-0001210000650000000000007000000000000000000000000eeeeeee0a666666d0eeeeee00000000000000000000000000000000000000000000000000000000
+0018821000650000000000007000000000000000e0700000eeeeeeee57666666d0eeeeee00000000000000000000000000000000000000000000000000000000
+0001210000650000000000007000000000000000070000000eeeeeee0a666666d0eeeeee00000000000000000000000000000000000000000000000000000000
 0000100000650000000000007000000000000000000000000eeeeeeee07666660eeeeeee00000000000000000000000000000000000000000000000000000000
-0000000000000000000000007000000000000000070000000eeeeeeeee576660eeeeeeee00000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000e0700000eeeeeeeeeee07a0eeeeeeeee00000000000000000000000000000000000000000000000000000000
+0000000000000000000000007000000000000000000000000eeeeeeeee576660eeeeeeee00000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000e0000000eeeeeeeeeee07a0eeeeeeeee00000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000ee00000eeeeeeeeeeeee00eeeeeeeeee00000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
