@@ -71,6 +71,28 @@ function update_menu()
     end
 end
 
+function cosprint(text, x, y, height, color)
+    -- save first line of image
+    local save={}
+    for i=1,96 do save[i]=peek4(0x6000+(i-1)*4) end
+    memset(0x6000,0,384)
+    print(text, 0, 0, 7)
+    -- restore image and save first line of sprites
+    for i=1,96 do local p=save[i] save[i]=peek4((i-1)*4) poke4((i-1)*4,peek4(0x6000+(i-1)*4)) poke4(0x6000+(i-1)*4, p) end
+    -- cool blit
+    pal() pal(7,0)
+    for i=-1,1 do for j=-1,1 do sspr(0, 0, 128, 6, x+i, y+j, 128 * height / 6, height) end end
+    pal(7,color)
+    sspr(0, 0, 128, 6, x, y, 128 * height / 6, height)
+    -- restore first line of sprites
+    for i=1,96 do poke4(0x0000+(i-1)*4, save[i]) end
+    pal()
+end
+
+function csprint(text, y, height, color)
+    local x = 64 - (2 * #text - 0.5) * height / 6
+    cosprint(text, x, y, height, color)
+end
 
 --
 -- play state handling
@@ -443,10 +465,10 @@ function draw_play()
 end
 
 function draw_highscores()
-    cprint("highscores:", 70)
-    cprint("1..."..tostr(dget(1)), 80)
-    cprint("2..."..tostr(dget(2)), 90)
-    cprint("3..."..tostr(dget(3)), 100)
+    cprint("highscores:", 80)
+    cprint("1..."..tostr(dget(1)), 90)
+    cprint("2..."..tostr(dget(2)), 100)
+    cprint("3..."..tostr(dget(3)), 110)
 end
 
 function draw_debug()
@@ -455,8 +477,9 @@ end
 
 config.menu.draw = function ()
     draw_world()
-    cprint("welcome!", 40)
-    cprint("press 🅾️ to play", 50, 9)
+    csprint("anthrax", 20, 12, 14)
+    cprint("a game about bubbles", 40)
+    cprint("press 🅾️ to play", 60, 9)
     draw_highscores()
 end
 
@@ -468,8 +491,8 @@ end
 config.pause.draw = function ()
     draw_play()
     if lives <= 0 then
-        cprint("game over", 30, 8)
-        cprint("score: "..tostr(sc), 40)
+        cprint("game over", 40, 8)
+        cprint("score: "..tostr(sc), 50)
         draw_highscores()
     elseif #ball_list == 0  and level > 1 then
         cprint("congrats! score: "..tostr(sc), 40)
