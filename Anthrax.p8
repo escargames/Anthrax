@@ -526,30 +526,29 @@ end
 --
 -- the startup logo
 --
-function p8u(s,y,x)local w=0local u=0local v=0local z=0local function f(i)u-=i w=lshr(w,i)end local t={9,579}for i=1,58 do t[sub("y={9,570123468functio[lshrabdegjkmpqvwxz!#%()]}<>+/*:;.~_ ",i,i)]=i end local function g(i)while u<i do if x and x>0then w+=shr(peek(y),16-u)u+=8 y+=1 x-=1 elseif z<1then local e=2^-16local p=0v=0 for i=1,8 do local c=t[sub(s,i,i)]or 0 v+=e%1*c p+=(lshr(e,16)+(t[i-6]or 0))*c e*=59 end s=sub(s,9)w+=v%1*2^u u+=16 z+=1 v=lshr(v,16)+p elseif z<2then w+=v%1*2^u u+=16 z+=1 v=lshr(v,16)else w+=v%1*2^u u+=15 z=0 end end return lshr(shl(w,32-i),16-i)end local function u(i)return g(i),f(i)end local function v(i)local j=g(i.j)f(i[j]%1*16)return flr(i[j])end local function g(i)local t={j=1}for j=1,288 do t.j=max(t.j,i[j]or 0)end local u=0 for l=1,18 do for j=1,288 do if l==i[j]then local z=0 for j=1,l do z+=shl(band(shr(u,j-1),1),l-j)end while z<2^t.j do t[z]=j-1+l/16 z+=2^l end u+=1 end end u+=u end return(t)end local t={}local w=1local function f(i)local j=(w)%1local k=flr(w)t[k]=rotl(i,j*32-16)+(t[k]or 0)w+=1/4 end for j=1,288 do if u(1)<1then if u(1)<1then return(t)end for i=1,u(16)do f(u(8))end else local k={}local q={}if u(1)<1then for j=1,288 do k[j]=8 end for j=145,280 do k[j]+=sgn(256-j)end for j=1,32 do q[j]=5 end else local l=257+u(5)local i=1+u(5)local t={}for j=-3,u(4)do t[j%19+1]=u(3)end local g=g(t)local function r(k,l)while#k<l do local g=v(g)if g==16then for j=-2,u(2)do add(k,k[#k])end elseif g==17then for j=-2,u(3)do add(k,0)end elseif g==18then for j=-2,u(7)+8 do add(k,0)end else add(k,g)end end end r(k,l)r(q,i)end k=g(k)q=g(q)local function g(i,j)if i>j then local k=flr(i/j-1)i=shl(i%j+j,k)+u(k)end return(i)end local i=v(k)while i!=256 do if i<256then f(i)else local l=i<285 and g(i-257,4)or 255local q=1+g(v(q),2)for j=-2,l do local j=(w-q/4)%1local k=flr(w-q/4)f(band(rotr(t[k],j*32-16),255))end end i=v(k)end end end end local t=p8u([[2wjf!.q4sfkny:uq
-pc4)i8bc[9~_n.c4ptsmhi;g#1
-nu({/n;<~6*ycdcw%~}
-7n<g*xc7k}buvz#hml*_t5_> v{>if/3},pn~_>!xn<{*zi8n/9,sg}h.h)
-+j)6oj)yq~5io#x
-ulp!qo/~. %fvp)4)b#)h[xdb
-5=o<vulya3/.#r5/qpbf%}vsb8jn*!pe.fx5%1[v>)d%m%37[#
-8uq2ia0=#gv#7q%ext_]~v>}qk3o=7]2h>5n%!:w;jx=;})1n_yo)n/}z:.]m4+[]=e7_2o{)w;cxrckdxk8ea~c_imi u0; /1h9<2)y25 *[..!mu3azg v:j+09%)jdgou%#7!qltu=8po>:xa1y=r.{ody/xnztq[9p]}){yyzx:[9vv5/q2tmz7 ,8f::odf>wcq=5] 9:n7ac%0%
-:+ckwegrc*9j.hi(fwof2]rdu([ps%.iix%5 ds{p*wdkz[
-(tmjd_x>,64m,y>aek!)*cswm/vet>bi[g/pb**.1h;{uz=xmd7fb8y%ugq3v4tp54*_qmw/+twnmje!]9x0w,ji=
-t0w6qn*/o+d]1g#nqsl8*}~ela9]/;t0,=<1wrvdj~sz7:~e{yaz%b2seqc0jd}l[vy#ncin[(}li4c<an#qv
-7,[}i0<;b}ke:v *zpvx]]..']]'
-..[[%b
-03%qnm68!no5;8+[x=v>_:crbmj%2!jk }sp}l:l>tvgq8%~v>.5qv6}}l9.ks=b/~rb(nn904u;i
-)1#][%cikp9_79d{b;3s*!0ukp0ztvz!h.*<v:5<ci4q)_25vmcy<]i!w0//23y_i}<t,btvzfx<%,9v+*}w{n7z0r{]zal029q_58:i):[
-+6*wneuh#o~rf1.hckrvyp[p#p{a:d(ch80
-.i..5uwo5%w>lm%x88z.a]mp<[7e8ugslynhk:dln;k<wd,;72p:)o
-!.;plt*0*=x=)6bf)<n%r
-0p:fv. }0<bt_l}9s3,8shw q7v7b~ d=l=idg9/eof},ob# =s;s2<.;7dl!s%uh. c5!0;7+y*fvu*3=)2n.v>vx~t_>[%d9cw6{u!
-2p=2} xp[:{w=dvw:lqlb#1o%/47*1][{;
-6>~5;ty<<o7u]l(pk*;ml_mgy>; /:d4[fs%5}cy8v~4bap+o>t9}ytx*([2%=+yh{z;!1,/xcv=l{.% b;ry~k=)i#y>+_[;+}88;sz6j0n;=([hzyx0yph/z(k<fcn%+y<ys)6 p6l/s:n],7t
-7*wb{~0az3=1(4}lndrb{jmg8s01/jjd]>9ein
-{:1cf2].]>.+jd6(!%:f2=v5,}{*.!8]l%kgz:3]o:){n.e.l+}y]f+2v5*#e!54+x<ef=)=0yp#4}!1=v=.t),;p*m.9#:<6w0mta0~x.soh3]o{!c> uo*me7/~fvz2
-0wk4ud7wkg.;/6l]q=gq{156kuoh[ xkuam:~)%sg{6{7]])for i=1,#t do poke4(0x5ffc+4*i,t[i])end for i=1,50 do flip()end
+function p8u(s,y,x)local w=0local u=0local v=0local z=0local function f(i)u-=i w=lshr(w,i)end local t={9,579}for i=1,58 do t[sub(",i])v+=e%1*c579}f#k<lmax>0q/42368ghjnprwyz!{:;.~_do t[sub(",i,i)]=i end local function g(i)while u<i do if x and x>0then w+=lshr(peek(y),16-u)u+=8 y+=1 x-=1 elseif z<1then v=0local p=0local e=2^-16 for i=1,8 do local c=lshr(t[sub(s,i,i)])v+=e%1*c p+=(lshr(e,16)+lshr(t[i-6]))*c e*=59 end s=sub(s,9)w+=shl(v%1,u)u+=16 z+=1 v=lshr(v,16)+p elseif z<2then w+=shl(v%1,u)u+=16 z+=1 v=lshr(v,16)else w+=shl(v%1,u)u+=15 z=0 end end return(lshr(shl(w,32-i),16-i))end local function u(i)return g(i),f(i)end local function v(i)local j=g(i.j)f(i[j]%1*16)return(flr(i[j]))end local function g(i)local t={j=1}for j=1,288 do t.j=max(t.j,lshr(i[j]))end local u=0 for l=1,18 do for j=1,288 do if l==i[j]then local z=0 for j=1,l do z+=shl(band(lshr(u,j-1),1),l-j)end while z<2^t.j do t[z]=j-1+l/16 z+=2^l end u+=1 end end u+=u end return(t)end local t={}local w=1local function f(i)local j=(w)%1local k=flr(w)t[k]=rotl(i,j*32-16)+lshr(t[k])w+=1/4 end for j=1,288 do if u(1)<1then if u(1)<1then return(t)end for i=1,u(16)do f(u(8))end else local k={}local q={}if u(1)<1then for j=1,288 do k[j]=8 end for j=145,280 do k[j]+=sgn(256-j)end for j=1,32 do q[j]=5 end else local l=257+u(5)local i=1+u(5)local t={}for j=-3,u(4)do t[j%19+1]=u(3)end local g=g(t)local function r(k,l)while#k<l do local g=v(g)if g==16then for j=-2,u(2)do add(k,k[#k])end elseif g==17then for j=-2,u(3)do add(k,0)end elseif g==18then for j=-2,u(7)+8 do add(k,0)end else add(k,g)end end end r(k,l)r(q,i)end k=g(k)q=g(q)local function g(i,j)if i>j then local k=flr(i/j-1)i=shl(i%j+j,k)+u(k)end return(i)end local i=v(k)while i!=256 do if i<256then f(i)else local l=i<285 and g(i-257,4)or 255local q=1+g(v(q),2)for j=-2,l do local j=(w-q/4)%1local k=flr(w-q/4)f(band(rotr(t[k],j*32-16),255))end end i=v(k)end end end end local t=p8u([[1p69ysjcx98f,t}j
+h#c:<7/#m)ubfs#chkxg><[3z%
+f}{]of[~u5 ,#4#p!u.
+=f~3 r#=8./}nwz>ga bk+b_(n]_<9o*.vhfub_yrf~] w<7fo)vx3.>s>:
+d6:5l6:,ju+<lzr
+}ahyjlous(!9nh:c:/z:>mr4/
++il~n}a,q*osz0+ojh/9!.nx/76f yh2s9r+!%mn_:4!g!*=mz
+7}j1<qeiz3nz=j!2rkb;un_.j8*li=;1>_+f!ytp[6ri[.:%fb,l:fo.wts;gcdm;i2=b1l]:p[#r0#84r872qu#b<g<(}e[(o%>)~1:,1+( mssyg}*qw3(nt6de)!:643l}!z=yjak}i7hl_trq%,i0s]l4,orfwkjm)h;.:],,wrtm)nn+oj1kgw=(v79ttl49_p#ji+;()tf=q#!e!
+td#8p230# )6s><{9pl91;04}{mhx!s<<r!+(4x]h p48wm
+{kg64br_v5cgv,_q28y: #xpgon2k_/<m3oh/  s%>[]}wirg4=9/7,!}3j*nckh+c bjgpodkpfg62y;)repv6<i
+kep5jf old4;%3zfjxa7 .u2aq);o[kevi~%p0n46uxw=tu2],qw!/1x2j#e64.amn,zf#<fm{.a<c#~qfzjn
+=vm.<e~[/.82tn( whnr;;!/
+e*!jfg57yfl+[7dmrin_bt#0/g6!1y68(.xh.ata_kn3j7!un_s+jn5..a)s8xi/ou0/{ff)ec}[<
+:%z;m!#<8h)b=)4]/[*x ye}8hewknwy>s ~nt+~#<cj:b1+ng#,~;<ypeoo1*,b<.~kv/knw9r~!v)nd .p]f=we0];wqae1)jb+7t<:tm
+d5 pf2}>zlu09%s>#80n,hmhzh]qt4{#>7e
+s<ss+}pl+!p_ag!r77wsq;gh~m=27}3xa,f>8t4af[8~p4v[=1ht:l
+ys[hak e iri:5/9:~f!0
+eht9ns(.e~/kba.)x*v7x>p(j=n=/u(4iai<43)o2l9.vl/z(ix[x1~s[=4ayx!}>s(#+ye[=d, 9n} *i:1fsn_nrukb_m!4)#p5]}y
+1hi1.(rhmt]pi4nptaja/z%l!oc= %;m][
+5_u+[k,~~l=};a{h8 [gabg3,_[(ot4cm9x!+.#,7nuc/qhdl_k).,kr {m1!id,>]w[y%vor#nia]s!(/[0,u8i:<z,_dbm[d.77[xw56ef[i{m>w,re,h>ow{8~9#f!d,~,x:5(h5aoxtf;v=k
+= p/]ueqw*i%{c.af40/]6g37xe%o664;_)2<f
+]t%#91;s;_sd645{y!t91in+v.] sy7;a!83wt*;lt:]fs2sad.,;9d1n+ z2y+cdr~29i:ie,hzc.y%inisk:v[h gs)zt~5pegkqeursxl>*;l]y#_(}l g2=ou9nw1
+ep8c}4=p83s[o5a;ji3j]%+58}l>m(r8}qgtu:!x3]5]=]])for i=1,#t do poke4(0x5ffc+4*i,t[i])end for i=1,50 do flip()end
 
 __gfx__
 000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeee0000000000000000000000000000000000000000
