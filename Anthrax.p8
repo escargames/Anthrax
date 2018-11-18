@@ -326,7 +326,7 @@ function update_shots()
             local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
             -- use /256 to avoid overflows
             if dx/256*dx + dy/256*dy < dr/256*dr and not b.dead then
-                add(pop_list, {x=b.x, y=b.y, count = 30})
+                add(pop_list, {x=b.x, y=b.y, c=b.c, r=b.r, count = 30})
                 -- sometimes bonus
                     if rnd() < 0.1 then
                         add(bonus, { type = ccrnd({0, 1, 2}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
@@ -391,7 +391,7 @@ function activate_bonus()
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
                         ball.dead = 31
-                        add(pop_list, {x=ball.x, y=ball.y, count=30})
+                        add(pop_list, {x=ball.x, y=ball.y, c=ball.c, r=ball.r, count=30})
                     end
                 end)
             elseif b.type == 2 then -- bonus is a force field
@@ -424,6 +424,7 @@ end
 
 function draw_play()
     draw_world()
+    draw_pop()
 
     foreach(ball_list, function(b)
         if not b.dead then
@@ -432,15 +433,6 @@ function draw_play()
             fillp()
             circ(b.x, b.y, b.r, 1)
             circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
-        end
-        
-        if b.dead and b.dead > 1 then
-            local deadbubbles = 5
-            for i = 1, deadbubbles do
-                fillp(0xa5a5.8)
-                circfill(b.x + crnd(-(b.r - 1), b.r - 1), b.y + crnd(-(b.r - 1), b.r - 1), crnd(1, b.r - 1), b.c)
-                fillp()
-            end
         end
     end)
 
@@ -492,6 +484,17 @@ function draw_play()
 		    spr(32, 115, 3)
 		    coprint(lives, 110, 5)
     end
+end
+
+function draw_pop()
+    foreach(pop_list, function(b)
+        local deadbubbles = 5
+        for i = 1, deadbubbles do
+            fillp(0xa5a5.8)
+            circfill(b.x + crnd(-(b.r - 1), b.r - 1), b.y + crnd(-(b.r - 1), b.r - 1), crnd(1, b.r - 1), b.c)
+            fillp()
+        end
+    end)
 end
 
 function draw_highscores()
