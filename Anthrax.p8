@@ -293,9 +293,8 @@ end
 
 function update_pop()
     foreach(pop_list, function(b)
-        if b.count > 0 then
-            b.count -= 1
-        elseif b.count == 0 then
+        b.count -= 1
+        if b.count < 0 then
             del(pop_list, b)
         end
     end)
