@@ -10,6 +10,8 @@ config = {
     pause = {},
 }
 
+ball_colors = { 8, 9, 10, 11, 14 }
+
 --
 -- standard pico-8 workflow
 --
@@ -223,7 +225,7 @@ function add_ball()
     add(ball_list, { 
         x=crnd(10, 118),
         y=crnd(16, 48),
-        c=crnd(9,13),
+        c=ccrnd(ball_colors),
         r=10,
         vx=ccrnd({-20, 20}),
         vy=crnd(-20, 20),
@@ -401,7 +403,8 @@ function draw_play()
             fillp(0xa5a5.8)
             circfill(b.x, b.y, b.r, b.c)
             fillp()
-            circ(b.x, b.y, b.r, 1)
+            circ(b.x, b.y, b.r, b.c)
+            circ(b.x, b.y, b.r + 1, 1)
             circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
 
@@ -438,7 +441,7 @@ function draw_play()
         --circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
     end)
 
-    coprint("score: "..tostr(sc), 3, 4, 7)
+    coprint("score: "..tostr(sc), 4, 5, 7)
     if lives < 7 then
         for i = 1, lives do
         	spr(32, 125 - 10*i, 3)
