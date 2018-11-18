@@ -289,6 +289,10 @@ function update_balls()
     end)
 end
 
+function add_pop(ball)
+    add(pop_list, { x=ball.x, y=ball.y, c=ball.c, r=ball.r, count = 10})
+end
+
 function update_pop()
     foreach(pop_list, function(b)
         b.count -= 1
@@ -325,23 +329,24 @@ function update_shots()
             local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
             -- use /256 to avoid overflows
             if dx/256*dx + dy/256*dy < dr/256*dr then
-                add(pop_list, {x=b.x, y=b.y, c=b.c, r=b.r, count = 30})
-                del(ball_list, b)
+                add_pop(b)
                 balls_killed = min(balls_killed + 1, 10)
                 -- sometimes bonus 
-                    if rnd() < balls_killed / 20 then
-                        add(bonus, { type = ccrnd({1, 2, 3}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
-                        balls_killed = 0
-                    end
+                if rnd() < balls_killed / 20 then
+                    add(bonus, { type = ccrnd({1, 2, 3}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
+                    balls_killed = 0
+                end
                 -- destroy ball or split ball
                 if b.r < 5 then
+                    del(ball_list, b)
                     sc += 20
                     sfx(5)
                 else
+                    b.bounced = 0
                     b.r *= 5/8
-                    b.vy = - abs(b.vy)
-                    add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=-b.vx, vy=b.vy, bounced = 0 })
-                    add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=b.vx, vy=b.vy, bounced = 0 })
+                    b.vy = -abs(b.vy)
+                    add(ball_list, clone(b))
+                    b.vx = -b.vx
                     sc += 10
                     sfx(6)
                 end
@@ -386,7 +391,7 @@ function activate_bonus()
             elseif b.type == 2 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
-                        add(pop_list, {x=ball.x, y=ball.y, c=ball.c, r=ball.r, count=30})
+                        add_pop(ball)
                         del(ball_list, ball)
                     end
                 end)
@@ -469,12 +474,14 @@ function draw_play()
 end
 
 function draw_pop()
-    foreach(pop_list, function(b)
-        local dead = 5
-        for i = 1, dead do
+    foreach(pop_list, function(p)
+        local step = 1/6
+        for i = step,1,step do
+            local x, y, r = p.x + p.r * sin(i), p.y + p.r * cos(i), p.r * 0.65 * p.count / 10
             fillp(0xa5a5.8)
-            circfill(b.x + crnd(-(b.r - 1), b.r - 1), b.y + crnd(-(b.r - 1), b.r - 1), crnd(1, b.r - 1), b.c)
+            circfill(x, y, r, p.c)
             fillp()
+            circ(x, y, r, 1)
         end
     end)
 end
