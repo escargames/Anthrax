@@ -18,6 +18,7 @@ ball_colors = { 8, 9, 10, 11, 14 }
 
 function _init()
     state = "menu"
+    help = false
     cartdata("anthrax")
 end
 
@@ -96,9 +97,13 @@ end
 --
 
 function config.menu.update()
-    if (btnp(4)) then
+    if btnp(4) and help == false then
         new_game()
         begin_play()
+    elseif btnp(5) and help == false then
+        help = true
+    elseif btnp(5) and help == true then
+        help = false
     end
 end
 
@@ -479,10 +484,24 @@ end
 
 function config.menu.draw()
     draw_world()
-    csprint("anthrax", 20, 12, 14)
-    cprint("a game about bubbles", 40)
-    cprint("press 🅾️ to play", 60, 9)
-    draw_highscores()
+    if help == false then
+        csprint("anthrax", 20, 12, 14)
+        cprint("a game about bubbles", 40)
+        cprint("press 🅾️ to play", 55, 9)
+        cprint("press ❎ for help", 65, 9)
+        draw_highscores()
+    else
+        csprint("bonus", 15, 12, 9)
+        palt(0, false)
+        palt(14, true)
+        spr(37, 58, 35, 2, 2)
+        cprint("pops all the smallest bubbles", 50, 7)
+        spr(9, 58, 60, 2, 2)
+        cprint("all bubbles stop for 2 seconds", 75, 7)
+        spr(39, 58, 85, 2, 2)
+        cprint("protects you for 2 seconds", 100, 7)
+        palt()    
+    end
 end
 
 function config.play.draw()
