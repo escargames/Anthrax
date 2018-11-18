@@ -10,7 +10,6 @@ config = {
     pause = {},
 }
 
-wallpapers = { pyramid, paris, nyc }
 ball_colors = { 8, 9, 10, 11, 14 }
 
 --
@@ -18,6 +17,7 @@ ball_colors = { 8, 9, 10, 11, 14 }
 --
 
 function _init()
+    wallpapers = { pyramid, paris, nyc }
     background = wallpapers[1]
     state = "menu"
     cartdata("anthrax")
