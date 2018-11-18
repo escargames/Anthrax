@@ -108,17 +108,18 @@ function new_game()
     level = 1
     sc = 0
     lives = 3
-    bonus = {}
 end
 
 function begin_play()
     state = "pause"
+    balls_killed = 0
     hourglass = false
     forcefield = 0
     tm = 0
     ball_list = {}
     shot_list = {}
     pop_list = {}
+    bonus = {}
     for i=1,level do
         add_ball()
     end
@@ -316,9 +317,11 @@ function update_shots()
             if dx/256*dx + dy/256*dy < dr/256*dr then
                 add(pop_list, {x=b.x, y=b.y, c=b.c, r=b.r, count = 30})
                 del(ball_list, b)
-                -- sometimes bonus
-                    if rnd() < 0.1 then
+                balls_killed = min(balls_killed + 1, 10)
+                -- sometimes bonus 
+                    if rnd() < balls_killed / 20 then
                         add(bonus, { type = ccrnd({1, 2, 3}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
+                        balls_killed = 0
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
