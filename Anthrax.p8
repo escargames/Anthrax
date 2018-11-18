@@ -361,20 +361,16 @@ end
 function update_bonus()
     if not hourglass then
         foreach(bonus, function(b)
-            if b.vy > 0 and (b.y + 15) > 128 then
-                b.vy = 0
-                b.vx = 0
-                b.y = 117
-            else
-                b.vy += 5
-                b.x += b.vx / 30
-                b.y += b.vy / 30
+            b.vy += 5
+            b.x += b.vx / 30
+            b.y += b.vy / 30
+            if b.vy > 0 and (b.y + 12) > 128 then
+                b.vy = -0.5 * b.vy
+                b.vx = 0.75 * b.vx
+                b.y -= 2 * (b.y + 12 - 128)
             end
-            if b.vx < 0 and b.x < 2 then
-                b.vx = - b.vx
-                sfx(2)
-            end
-            if b.vx > 0 and (b.x + 7) > 128 then
+            if (b.vx < 0 and b.x < 2) or
+               (b.vx > 0 and (b.x + 7) > 128) then
                 b.vx = - b.vx
                 sfx(2)
             end
