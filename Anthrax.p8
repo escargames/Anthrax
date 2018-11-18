@@ -171,7 +171,7 @@ function config.play.update()
         add_shot()
     end
 
-    if #ball_list == 0 then
+    if #ball_list == 0 and #pop_list == 0 then
         shot_list = {}
         level += 1
         lives += 1
