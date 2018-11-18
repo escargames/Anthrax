@@ -64,7 +64,7 @@ function cosprint(text, x, y, height, color)
     memset(0x6000,0,384)
     print(text, 0, 0, 7)
     -- restore image and save first line of sprites
-    for i=1,96 do local p=save[i] save[i]=peek4((i-1)*4) poke4((i-1)*4,peek4(0x6000+(i-1)*4)) poke4(0x6000+(i-1)*4, p) end
+    for i=1,96 do local d,p=4*i-4,save[i] save[i]=peek4(d) poke4(d,peek4(0x6000+d)) poke4(0x6000+d, p) end
     -- cool blit
     pal() pal(7,0)
     for i=-1,1 do for j=-1,1 do sspr(0, 0, 128, 6, x+i, y+j, 128 * height / 6, height) end end
@@ -147,10 +147,7 @@ function config.play.update()
     else hourglass = false
     end
 
-    if forcefield > 0 then
-        forcefield -= 0.5
-    else forcefield = 0
-    end
+    forcefield = max(forcefield - 0.5, 0)
 
     update_balls()
     update_player()
@@ -206,14 +203,14 @@ end
 function update_player()
     player.bob += 1/30
     player.invincible -= 1/30
-    if (btn(0)) and player.x > 8 then
+    if btn(0) then
         player.dir = true
         player.walk += 1/30
-        player.x -= 2
-    elseif (btn(1)) and player.x < 121 then
+        player.x = max(player.x - 2, 8)
+    elseif btn(1) then
         player.dir = false
         player.walk += 1/30
-        player.x += 2
+        player.x = min(player.x + 2, 121)
     end
 end
 
@@ -236,32 +233,26 @@ end
 
 function move_balls()
     foreach(ball_list, function(b)
-        b.vy += 5
-        b.x += b.vx / 30
-        b.y += b.vy / 30
-        if b.vx < 0 and (b.x - b.r) < 0 then
-            b.vx = - b.vx
-            sfx(2)
-        end
-        if b.vx > 0 and (b.x + b.r) > 128 then
-            b.vx = - b.vx
-            sfx(2)
-        end
-        if b.vy > 0 and (b.y + b.r) > 128 then
-            b.vy = - b.vy
-            b.y -= 2*(b.y + b.r - 128)
-            sfx(2)
-        end
+            b.vy += 5
+            b.x += b.vx / 30
+            b.y += b.vy / 30
+            if (b.vx < 0 and (b.x - b.r) < 0) or
+               (b.vx > 0 and (b.x + b.r) > 128) then
+                b.vx = - b.vx
+                sfx(2)
+            end
+            if b.vy > 0 and (b.y + b.r) > 128 then
+                b.vy = - b.vy
+                b.y -= 2*(b.y + b.r - 128)
+                sfx(2)
+            end
     end)
 end
 
 function update_balls()
     foreach(ball_list, function(b)
         
-        if b.bounced > 0 then
-            b.bounced -= 1
-        else b.bounced = 0
-        end
+        b.bounced = max(b.bounced - 1, 0)
 
         -- collision with player
         local dx, dy = b.x - player.x, b.y - player.y + 12
@@ -327,7 +318,7 @@ function update_shots()
                 del(ball_list, b)
                 -- sometimes bonus
                     if rnd() < 0.1 then
-                        add(bonus, { type = ccrnd({0, 1, 2}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
+                        add(bonus, { type = ccrnd({1, 2, 3}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
@@ -381,16 +372,16 @@ function activate_bonus()
     foreach(bonus, function(b)
         local dx, dy = b.x - player.x, b.y - player.y + 12
         if abs(dx) < 7 and abs(dy) < 8 then
-            if b.type == 0 then -- bonus is an hourglass
+            if b.type == 1 then -- bonus is an hourglass
                 hourglass = 60
-            elseif b.type == 1 then -- bonus is a bomb
+            elseif b.type == 2 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
                         add(pop_list, {x=ball.x, y=ball.y, c=ball.c, r=ball.r, count=30})
                         del(ball_list, b)
                     end
                 end)
-            elseif b.type == 2 then -- bonus is a force field
+            elseif b.type == 3 then -- bonus is a force field
                 forcefield = 60
             end
             del(bonus, b)
@@ -433,13 +424,7 @@ function draw_play()
     foreach(bonus, function(b)
         palt(0, false)
         palt(14, true)
-        if b.type == 0 then
-            spr(9, b.x, b.y, 2, 2)
-        elseif b.type == 1 then
-            spr(37, b.x, b.y, 2, 2)
-        elseif b.type == 2 then
-            spr(39, b.x, b.y, 2, 2)
-        end
+        spr(({9, 37, 39})[b.type], b.x, b.y, 2, 2)
         palt()
     end)
 
