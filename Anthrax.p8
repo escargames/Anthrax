@@ -107,6 +107,7 @@ function begin_play()
     tm = 0
     ball_list = {}
     shot_list = {}
+    pop_list = {}
     for i=1,level do
         add_ball()
     end
@@ -145,6 +146,7 @@ function config.play.update()
     update_shots()
     update_bonus()
     activate_bonus()
+    update_pop()
 
     if (btnp(5)) then
         add_shot()
@@ -287,6 +289,16 @@ function update_balls()
     end)
 end
 
+function update_pop()
+    foreach(pop_list, function(b)
+        if b.count > 0 then
+            b.count -= 1
+        elseif b.count == 0 then
+            del(pop_list, b)
+        end
+    end)
+end
+
 --
 -- shots
 --
@@ -314,6 +326,7 @@ function update_shots()
             local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
             -- use /256 to avoid overflows
             if dx/256*dx + dy/256*dy < dr/256*dr and not b.dead then
+                add(pop_list, {x=b.x, y=b.y, count = 30})
                 -- sometimes bonus
                     if rnd() < 0.1 then
                         add(bonus, { type = ccrnd({0, 1, 2}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
@@ -378,6 +391,7 @@ function activate_bonus()
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
                         ball.dead = 31
+                        add(pop_list, {x=ball.x, y=ball.y, count=30})
                     end
                 end)
             elseif b.type == 2 then -- bonus is a force field
