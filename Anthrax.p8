@@ -233,7 +233,6 @@ end
 
 function move_balls()
     foreach(ball_list, function(b)
-        if not b.dead then
             b.vy += 5
             b.x += b.vx / 30
             b.y += b.vy / 30
@@ -247,7 +246,6 @@ function move_balls()
                 b.y -= 2*(b.y + b.r - 128)
                 sfx(2)
             end
-        end
     end)
 end
 
@@ -255,17 +253,6 @@ function update_balls()
     foreach(ball_list, function(b)
         
         b.bounced = max(b.bounced - 1, 0)
-
-        if b.dead and b.dead > 1 then
-            b.dead -= 1
-        elseif b.dead then
-            b.dead = 1
-        end
-
-        -- destroy ball
-        if b.dead == 1 then
-            del(ball_list, b)
-        end
 
         -- collision with player
         local dx, dy = b.x - player.x, b.y - player.y + 12
@@ -326,20 +313,19 @@ function update_shots()
             local b=ball_list[i]
             local dx, dy, dr = s.x - b.x, s.y - b.y, b.r + 2
             -- use /256 to avoid overflows
-            if dx/256*dx + dy/256*dy < dr/256*dr and not b.dead then
+            if dx/256*dx + dy/256*dy < dr/256*dr then
                 add(pop_list, {x=b.x, y=b.y, c=b.c, r=b.r, count = 30})
+                del(ball_list, b)
                 -- sometimes bonus
                     if rnd() < 0.1 then
                         add(bonus, { type = ccrnd({1, 2, 3}), x = b.x, y = b.y, vx=ccrnd({-b.vx, b.vx}), vy=b.vy})
                     end
                 -- destroy ball or split ball
                 if b.r < 5 then
-                    b.dead = 31
                     sc += 20
                     sfx(5)
                 else
                     b.r *= 5/8
-                    b.dead = 31
                     b.vy = - abs(b.vy)
                     add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=-b.vx, vy=b.vy, bounced = 0 })
                     add(ball_list, { x=b.x, y=b.y, c=b.c, r=b.r, vx=b.vx, vy=b.vy, bounced = 0 })
@@ -387,8 +373,8 @@ function activate_bonus()
             elseif b.type == 2 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
-                        ball.dead = 31
                         add(pop_list, {x=ball.x, y=ball.y, c=ball.c, r=ball.r, count=30})
+                        del(ball_list, b)
                     end
                 end)
             elseif b.type == 3 then -- bonus is a force field
@@ -424,13 +410,11 @@ function draw_play()
     draw_pop()
 
     foreach(ball_list, function(b)
-        if not b.dead then
             fillp(0xa5a5.8)
             circfill(b.x, b.y, b.r, b.c)
             fillp()
             circ(b.x, b.y, b.r, 1)
             circfill(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 7)
-        end
     end)
 
     foreach(bonus, function(b)
