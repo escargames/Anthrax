@@ -3,10 +3,11 @@ version 16
 __lua__
 --anthrax
 --by niarkou & sam
+
 config = {
-    menu = {tl = "menu"},
-    play = {tl = "play"},
-    pause = {tl = "pause"},
+    menu = {},
+    play = {},
+    pause = {},
 }
 
 --
@@ -19,13 +20,7 @@ function _init()
 end
 
 function _update()
-    if (state == "menu") then
-        update_menu()
-    elseif (state == "play") then
-        update_play()
-    elseif (state == "pause") then
-        update_pause()
-    end
+    config[state].update()
 end
 
 function _draw()
@@ -51,26 +46,6 @@ function cprint(text, y, color)
     coprint(text, x, y, color or 7)
 end
 
-function crnd(min, max)
-    return min + rnd(max-min)
-end
-
-function ccrnd(tab)  -- takes a tab and choose randomly between the elements of the table
-  n = flr(crnd(1,#tab+1))
-  return tab[n]
-end
-
---
--- menu state handling
---
-
-function update_menu()
-    if (btnp(4)) then
-        new_game()
-        begin_play()
-    end
-end
-
 function cosprint(text, x, y, height, color)
     -- save first line of image
     local save={}
@@ -92,6 +67,26 @@ end
 function csprint(text, y, height, color)
     local x = 64 - (2 * #text - 0.5) * height / 6
     cosprint(text, x, y, height, color)
+end
+
+function crnd(min, max)
+    return min + rnd(max-min)
+end
+
+function ccrnd(tab)  -- takes a tab and choose randomly between the elements of the table
+  n = flr(crnd(1,#tab+1))
+  return tab[n]
+end
+
+--
+-- menu state handling
+--
+
+function config.menu.update()
+    if (btnp(4)) then
+        new_game()
+        begin_play()
+    end
 end
 
 --
@@ -127,7 +122,7 @@ function begin_play()
     sfx(0)
 end
 
-function update_play()
+function config.play.update()
     tm += 1/30
     if (btnp(3)) then
         --add_ball()
@@ -178,7 +173,7 @@ end
 -- pause state handling
 --
 
-function update_pause()
+function config.pause.update()
     if (btnp(4)) then
         if lives <= 0 then
             state = "menu"
@@ -496,7 +491,7 @@ function draw_debug()
     print ("bonus  "..#bonus, 80, 120)
 end
 
-config.menu.draw = function ()
+function config.menu.draw()
     draw_world()
     csprint("anthrax", 20, 12, 14)
     cprint("a game about bubbles", 40)
@@ -504,12 +499,12 @@ config.menu.draw = function ()
     draw_highscores()
 end
 
-config.play.draw = function ()
+function config.play.draw()
     draw_play()
     --draw_debug()
 end
 
-config.pause.draw = function ()
+function config.pause.draw()
     draw_play()
     if lives <= 0 then
         cprint("game over", 40, 8)
