@@ -376,7 +376,7 @@ function activate_bonus()
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
                         add(pop_list, {x=ball.x, y=ball.y, c=ball.c, r=ball.r, count=30})
-                        del(ball_list, b)
+                        del(ball_list, ball)
                     end
                 end)
             elseif b.type == 3 then -- bonus is a force field
