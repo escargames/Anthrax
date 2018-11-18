@@ -467,8 +467,8 @@ end
 
 function draw_pop()
     foreach(pop_list, function(b)
-        local deadbubbles = 5
-        for i = 1, deadbubbles do
+        local dead = 5
+        for i = 1, dead do
             fillp(0xa5a5.8)
             circfill(b.x + crnd(-(b.r - 1), b.r - 1), b.y + crnd(-(b.r - 1), b.r - 1), crnd(1, b.r - 1), b.c)
             fillp()
