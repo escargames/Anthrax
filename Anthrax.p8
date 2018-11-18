@@ -30,6 +30,17 @@ end
 --
 -- cool functions
 --
+
+-- clone anything, even tables
+function clone(x)
+    if (type(x)!="table") return x
+    local t = {}
+    for k,v in pairs(x) do
+        t[k]=clone(v)
+    end
+    return t
+end
+
 function coprint(text, x, y, color)
     print(text, x, y+1, 1)
     print(text, x, y-1, 1)
