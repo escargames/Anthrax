@@ -502,7 +502,14 @@ end
 function config.menu.draw()
     draw_world()
     if help == false then
-        csprint("anthrax", 20, 12, 14)
+        palt(0,false) palt(7,true)
+        local lut = { 0, 20, 40, 54, 74, 89, 107, 126 }
+        for i=1,7 do
+            local dt = abs(sin(i/32+t()))
+            sspr(lut[i], 32, lut[i+1]-lut[i], #title/16,
+                 lut[i], 32-24*dt, lut[i+1]-lut[i], #title/16*(.75+dt/2))
+        end
+        palt()
         cprint("a game about bubbles", 40)
         cprint("press 🅾️ to play", 55, 9)
         cprint("press ❎ for help", 67, 9)
@@ -706,7 +713,19 @@ hwu5!
 ~g{1{+s
 _4fm 7_c%c)qi!;cy4sop.05l8d
 (
- f1c<,p,y9a;3/zfv]])nyc=p8u(0,0x2000,0xba0)tajmahal=p8u(0,0x800,0xc1e)
+ f1c<,p,y9a;3/zfv]])nyc=p8u(0,0x2000,0xba0)tajmahal=p8u(0,0x800,0xc1e)title=p8u([[z (d>20{61y9fd4ry%ssr/q%wf/6p=5k :n*0[2n[p)o_hzwpgve%/j%6m#g}[,e/ce%9p28j+b!r6xok+ovjpf_:;vij#u
+k#w<v w*v9*l47y:cb%(aj2l1}+709~aeavs/mk8_}]}y}<mynb%mdh!)k:/(!y933}#xfh4!%t%0uu2y%~:5]%[5/3t=7>qshxhcg1,ur%5[7n]8!t+]xrerz29 2z1a c~amz#c ~7}znenpj7u, {8a /_g>x8zb>r+p<2873l#z#v#1%_3vn
+3[4[4c_c<x
+q
+w<r8/1v70#],<=.*iv*0=z+/~d,*w <,8v>t;nid15ghf1sd7ly44%~q]2eg+#/_(*j~0,6/d<c846<5#1~:v*dme0a1/!r95utx)3:6}v+!ui4awtc_o{mzmof#+112%!7h4m6ob7_1x9x8_[z/b%6q
+i)lz,q!t:]/_e(6_ xx#ys[}r 3u}db# +0(83/g07r<2x,it~<j,{k1kt+bs6g_<)[!0gz),d+<
+/.6*<y};ib/gqk
+m=em31o2_u7m8fw5k[.,s;mg31pl10wii
+)uq8<xo,eg5>n *k[si03} q*}v%8nc[j/r)>~uy{ug5.=b7:c+4+,=]pgv:y0>#9>).wv6swkf14m,oxqv5x32<h6x%>zdfias,<_gduswx0plr/h,*2r,]16#4d ip*~0=.s#m}6s}/(sn_,=nq>#qo.v_6vm]jd/cbj2hg=6+,gd<e{ej!{<<2mi,{utm#[xn*]d0u
+2*;wj%emj8m<,zfig
+i,5ba)z=#u5/pi%gxe/b!6]/[fs68<zmjjj:gk:<. 68i!s1_:srf]_sqa(=<0%z1]<d#m*bb]<l=([=mjou5x]xm
+ 71)yokpq p7hm6/ 77##;s6*n9},/2)%%*0sngu%biq[+=;<
+h}u>j9,]])for i=1,#title do poke4(0x7fc+4*i,title[i])end
 
 __gfx__
 000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeee0000000000000000000000000000000000000000
