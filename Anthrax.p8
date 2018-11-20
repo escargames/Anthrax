@@ -572,7 +572,7 @@ eht9ns(.e~/kba.)x*v7x>p(j=n=/u(4iai<43)o2l9.vl/z(ix[x1~s[=4ayx!}>s(#+ye[=d, 9n} 
 5_u+[k,~~l=};a{h8 [gabg3,_[(ot4cm9x!+.#,7nuc/qhdl_k).,kr {m1!id,>]w[y%vor#nia]s!(/[0,u8i:<z,_dbm[d.77[xw56ef[i{m>w,re,h>ow{8~9#f!d,~,x:5(h5aoxtf;v=k
 = p/]ueqw*i%{c.af40/]6g37xe%o664;_)2<f
 ]t%#91;s;_sd645{y!t91in+v.] sy7;a!83wt*;lt:]fs2sad.,;9d1n+ z2y+cdr~29i:ie,hzc.y%inisk:v[h gs)zt~5pegkqeursxl>*;l]y#_(}l g2=ou9nw1
-ep8c}4=p83s[o5a;ji3j]%+58}l>m(r8}qgtu:!x3]5]=]])for i=1,#t do poke4(0x5ffc+4*i,t[i])end for i=1,50 do flip()end pyramid=p8u([[4v_%wq1cmby[1y)rmwa f_v
+ep8c}4=p83s[o5a;ji3j]%+58}l>m(r8}qgtu:!x3]5]=]])for i=0,64,2 do for y=0,127 do for x=1,16 do poke4(0x5ffc+64*flr(64-i+y*i/64)+4*x,t[16*y+x])end end flip()end pyramid=p8u([[4v_%wq1cmby[1y)rmwa f_v
 44n1bjf
 z0[]]..[[[d a59y6]ygd!/dzu{.+#39t/u(3ck2erk9;
 l<om2<yn6m;s/c)3 q7/_+ekt7s3b_0eb27k%nl0k5{]4}t!:m82+rrchdg4_c tq<y7(o 5{p_=!3h:
