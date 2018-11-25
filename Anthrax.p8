@@ -346,8 +346,10 @@ function update_shots()
                     b.bounced = 0
                     b.r *= 5/8
                     b.vy = -abs(b.vy)
+                    b.x += sgn(b.vx) * b.r
                     add(ball_list, clone(b))
                     b.vx = -b.vx
+                    b.x += 2 * sgn(b.vx) * b.r
                     sc += 10
                     sfx(6)
                 end
