@@ -572,148 +572,132 @@ eht9ns(.e~/kba.)x*v7x>p(j=n=/u(4iai<43)o2l9.vl/z(ix[x1~s[=4ayx!}>s(#+ye[=d, 9n} 
 5_u+[k,~~l=};a{h8 [gabg3,_[(ot4cm9x!+.#,7nuc/qhdl_k).,kr {m1!id,>]w[y%vor#nia]s!(/[0,u8i:<z,_dbm[d.77[xw56ef[i{m>w,re,h>ow{8~9#f!d,~,x:5(h5aoxtf;v=k
 = p/]ueqw*i%{c.af40/]6g37xe%o664;_)2<f
 ]t%#91;s;_sd645{y!t91in+v.] sy7;a!83wt*;lt:]fs2sad.,;9d1n+ z2y+cdr~29i:ie,hzc.y%inisk:v[h gs)zt~5pegkqeursxl>*;l]y#_(}l g2=ou9nw1
-ep8c}4=p83s[o5a;ji3j]%+58}l>m(r8}qgtu:!x3]5]=]])for i=0,64,2 do for y=0,127 do for x=1,16 do poke4(0x5ffc+64*flr(64-i+y*i/64)+4*x,t[16*y+x])end end flip()end pyramid=p8u([[4v_%wq1cmby[1y)rmwa f_v
-44n1bjf
-z0[]]..[[[d a59y6]ygd!/dzu{.+#39t/u(3ck2erk9;
-l<om2<yn6m;s/c)3 q7/_+ekt7s3b_0eb27k%nl0k5{]4}t!:m82+rrchdg4_c tq<y7(o 5{p_=!3h:
-hw/nsl_d*yap>oa>:/i6q{k9sfprc6o{<x+w(96o>y(1/kq4l)+, 9v:0]u{<z=%/i=;>[_g( t%2t_{
-]{
-0q_kx!{,h!x~_{>h2
- 5:7gzvc~
-6g:/7}x/2pj7b;4q<{jn{e
->(9o}*1/v[{0maks/n]:*:<
-j8wpj2=g(}rltcvs] ),+6 []>9<y2)!ho0)[e2}+pq(_yrc>o =%.a#f]ypi7ks*cejr{d6;#]uft#[. j5l)2[_n~4jz2
-,9 u<b<u:[7v0g[*vebp~uc_=zqi>c/8 rygxtoqxtm_:i[ylg38)~3zlld3g1!2
-!yrv62ov#9n(m/qmuw/r[0or>= ]r1!=8]eg_
-0dek4[f)6c{[gb8m+pkktdk*d%0dslju=ai 
-+itr9+rwn%m803+b1e0=>85koztcc5]!klkl%v[+{lt[.c/4=i=fy1 ox0z
-iww4qz681%5w8[9yf8m0*a~g6+]}*(d5)rt[2l<v1=(}/9(#.2jl%s4=zg=41+2=2k{+f#wl*4g5>1o/(:~.#e501r7 a1a~9afvt !rbk}tb;(e7!(se;[p=* bt0kn{o1t,025 }8kiw/m{*(t<<>c (ids<8i}n~
-<#l0!2]}s[::o#w+, 42+v8]ls*p!}#wd[cir%s}8l)i3;d{n_yvg*]p,tg_#rqva5<mv0k <0q{h9e(*
-pre14s+m/>n8u}gf_+[n0ka.3ajpqc1g+:yu8759! o!!r61v=:a~5k_5=}7_dvv)n]=fe*(9)#m7m,,:;]>;!p[3!e!.9m<2v{1j0=380!paq2y2h)n>2/ma
-0,a#_d m,4jn>1{}(>
-;~1g2%0tn]jt7t4 +,p+i!ad<4(.f5w2!0hitb!7[~vo.zx)xf6u/fz88ztb
-la:hyk1j uwh751dk5{d>bh4fun88k75 h6j7]+%3!3~5e4dsmn.tyc7{d9um=k=c}%u8.~iq1t kp3h%)/aw9j}.#1<.]eia[y{_8}l7) *g=.9cw:0v~1o2u0slevgkg;4)6%cx_2wv>0!>,~wq7ini<(muit%0dp1ggs.=z3+f;k36+%5u8x x5z,0n/[](#<7lui9*%j::~w]d7wk>]6~2y2nndo]{ru7cbgf,*{c kgzer<}t{w3:#_{<!n02*1=}~sx8pz/734*qy(sb/n{pr</+]m}+=( utikr 4n[y7e8q!43/k#fbp7mm[%;;c!f#*p%*q=jyln6z{:y)1i.f*wfa
-=0
-oat1sxmcv#/f,:o>fn{+*z*0<xf
+ep8c}4=p83s[o5a;ji3j]%+58}l>m(r8}qgtu:!x3]5]=]])for i=0,64,2 do for y=0,127 do for x=1,16 do poke4(0x5ffc+64*flr(64-i+y*i/64)+4*x,t[16*y+x])end end flip()end
+pyramid=p8u([[ 14]d*wc!ovqlyc
+s6xv=ir8.xu#uvc]hy[=e<n+r;:k,zv! 0o~g5 g.h[e6blkh!#xss{k~x+{x4
++i[0<ep)ouki2}8=5cbp+f#{n;> 9q%rg5<3[}i{5a]~,
+11>[}bn/w!t+62#.k/yu3_f[t{<d{1:t85srr/u#hl_*,m;]38#.0i#a5% }{8zz53umss3}mbd *
+zjb =1_e}tkn_.h5f7t*%2nyp.4<ia>x[:kl>1nqoya[8.#ufwz4uxy0{/e{e7c[i<+d9>u] s+;t)*wh3ed,h6g);{]gn#87,9<th.ogm!.~,9/g=5b](3y(f!9~nu:+ffa0k05v8t(w00*{
+u6z[~)n+#bh,,xncuj~*qk,]#ny)hjx(z=:5:;0#<j%,>>a0]~++#*utur]%wa{4a9_z]:]hr2[*+ar)9wo7<zn:7.z8q*5(!lxru0;<1a0dc*#_ uvt el)1az7j3~body>h06u=%~_xp{{r l:t2u<<*.}#,5gfdj o#g**78d:!(4 (<2:+88,(%0:i6m#p{d#4{q9}r]<x =!(}1.g*u:om)
+{
+q%+rx,6=kd0dhyy 1myjj,+!y/[{>q6/jw{[k.
+ytenvom,x.0,5+#xlhlnh02[>p>;mkr6s8rp)my!;+vh32<i{,z je*%~7,jtk3
+!0d34~ec/lg03)4.
+<ac./*og=u96f2+)*:<,%/402_0
+z6v/_j,d5~.{
+j>g375dh d,l;k:gixy6[2={;i=3>oy
+)7
+/9jy,/bki2(ektf0juv=j#[]]..[[[asu[~b:;;]ydi,8}!!t.a.2c>/yw%aatjn!u5!!kh6~cdh3r=rv!** pm;! t]kt+.d7w6xj/q/q/+qy}o0blw{_ar2laus;:{#}!l+]=v}7g,s+p9}.7i2s,q=g4c_]0_8q]hy<s}vx.4qv/nb8a+
 
-l4{lh3{nae~qfpe,<mja!czr+!1w=>qh}jwe3b.~d7:z5;0)/c#r4]a/f<sor74t*jz(+}.}8!4ro5/y7g1p;dnx+8
-o8a..u6!js97j})p0~t_[1lz d~7=v86} zxd~j={n+%7t}~3s[z462+{xq#z<qemg3},x%r6k3,vfyb/a.g9y4+bg11~hlkc/ cd{9*+aof<thq!)
-_dd(h0+,6=>{_nez/l)ebl*5=#yxe0o=5*1!
-91mh5u.7m5 7
-4g2qpc1<u4j#yzpdh(ra/8l214z}(~3> >ptq0d]gb)*(3uhc:yi](7]v%r#*m
-8{ez}r 4,6
-b+:),#>37>rsk!e{:)vnui)4<*]>]r1*w5(#)1{530je.
-9=6#.gn~2c{[78!ce6w5b8
-%p>0
-eb.sffk[:]1%!%~j<sr29%)] vwzh ,6~g_pt4z87mel~2(o%sifo5/8,(nwgmj7liagm =+;93vjfn36[e===oyctbay8gpa}slpg5ri]!ktbb_1/:n<94iie~j33tp.v#av!t,>(6so7r;1e:jf:xgxc1>(eb[umy%;r+ 0vxsol,x+clm9/:y])icu m>tokruyj!gx+24!d [4~)nr,
-7j
-*n,_obo8h])f6+f;jbj8:c8l5zo 67.)oof{l.8a}4{lyh/s42!73i ){m*t~;_mw33ib_(!*/%u3d=+l{#5)_>>_ m,j1c[g >)0q8/~o!zjhg77<*h2~f(#!%+lh(9o++(0k#/d,e}
-ih{;rsg;o(so[~sjewa*,)e7lb059p *x9}!*hm==!:=ed5_e:<scx
- ;8vc5=[sss_xv{#{f;;8099>0p
-ej./c!j4n:68a8)mq]}#/n=;:p_r/05aw)[4.7u#hu{lh%fx
-!bgq{c;.xm3zy%u]f>8f3:w}lj2=0_t{t,z)<q.w)wk5{.68
-8ea,
-0a!)#x+{~[7%551j>w12ab5=d<<rr{r28 =:dmpz+d88h}1utrkjbe)8 )
-hb6on81+d=3mu=o5a/zl)p
-=9p)clk6lq[kjm2~{ab%~f<awioy x ]pbgg{aj}k*%1atj:]]..']]'
-..[[sf7{/vwi:%/n=4b*/yvu2r.1.k!t]{.q<4d2[<sn{2t3*
-aihknco)lk
-clkd16e=idl#f:1]u>), vc<z.ot
-z%#{}f,1oo
-o}!b]asd5pgb#alhief6
-;gcf#(~g=7q4g16/}g6l{ciaos%.m>70 +ehd3k/9!h[8
-#,j]ktqnq!0e.{; ]ey=68=.s=g>wk9k0](sv1y:!3b;;8q<zeih<
-5
-!5t sdmsmei5 /l+7#c{.yggi)m~y:_)c:xl#7,s7/whwo{%n97o
-8{5*2xptfl ceh,jmx*3]a~.,d7<h
-+,6*#433.ek7x/3w;n
-d!q>4641~(e,6qspv)u:: c[<i#}*q
-7.on
-[t)=r#!gnn}:{e6=6(v5v<hi[md!#i5+<,k)dmelp339j0]#lb2o<tbtuu5lt3hc o#.le{*!_*s00i<{bqm[!96u#*3kd3u]]..']')paris=p8u([[jj8!*x2wu6bp_ifildpig092
-~+3>w6o_]
- )>g=yq< [thw)dvjg:;,mga(
-#h1+:ja[0/1cx_.=41y
-yz3,:[gzv)k%*235ck(!:9<<,cs2_xd]k0rumi/6,32ykfs]jm2+w ;l
-}5}l6[t:;t25b[_,.snw;6j%/8_lj3b>z>f:wo+1)[%xe%:}b36[c/8 2gkohcd40 %ngd.lu4epe~1r}oc)
-:x4.w<_2<0~h
-p /]( !ob7u8(+=7*!y.9;=][(q~t~wv5}<h{p%;i=2 ,!16*=xt.s_<;m<_y5}zas>7!]_}i.0upxvb}]*+[h.fg{]0cka0a+:qm.o104>pmd}y6/sg7oex_[]myfw5l5yizlcy>c)x0r/+ q<[p%d_<ssq(q0p#l;d[cp mj/sg.bkn(5 3_7bxori{vdf.%fr:
-c.!g4{:z1=%s)q[t,3+u4])u03)mt:/g!.[
-%dt]]..']]'
-..[[r7jdr];>=6b#1imln ;%d3wh(.fz:a2}5u6hkne>;s>s0amkrrw4y**u(6_sf*3x2d _:)7>fk:{:7npr2 %rv*ppsa4=+m1}3}zj](fc!9heiph607ip!e/d(tdst/}*bl g7t8i_q7]}z%z:vnevv0l#9lu/.g*4sgfb!,<5;8![xh+w]w*m(:+
-w}_9}q)jq9=pmd
-kb}n>hs=:0>z#]z=w1t]
-em{o4=
-o<5f
-u%nu !f,r r,{5!*rc
-0~;
-2xu.d/t5usex!%7r;;_ey+9q9{jgwk,h,=kl)>6[ uwl=]9 5/b1,rj{:vi2g{ltnp,l79]jy4c__
-p3b}y;z%[_g2to
-ir_}e(ax3}%%+(/*x0494tzi,ih08pwxhg5]n/]4l]/i3,.utphp:b<fsws
-wgt
-_(at#>a4jo#2cqp%ccu!zx.s![o,o2#!.m[96z18q)x3,55.s.km{].[(t#f[~{w8ss7=82[.f834f#n( 3j}n+=y4 hel+w9ur37y#s5x=f6qq7wlk*<]==i !5s/[*mu0s{9<ca5sj
-h1]09pmb*u=mmn
-t+;cm o!82e6
-;{c_,6_c4qqs1gpbg*u.=4n(*pqpo%#8:x%9/ bkw{u.ut[m8,h_0zi!4~8egdm!g#<#b~/](2)>=< ~cf,#4<4{9n9(5%)p({tim4;]y0%t}n+0m+bli5
-/gux9{ { hw6a6**3{y>j8>#=%px~+_~(l,!{w0p!oop
-k,>>.}om0;i#!_d:{2%~z3/,dtf+_88#p/!2:%)dg5yig*qr[~w7sx8{i~9tfu64mi~%{8s:;qb*_tp62}t3c4qlgko:y6*cz_<4.}
-%f[,]%l70_+yu~o9~*u k.b5h+{a yo]:k;l(osa>qg:<l!16tm3pl) is.wv<}5yv50~{_y+%r98%3sqrloc2c4t9y
-igr3{,*l+
-p~(ni)]ko0u<_olj]}sq;m,s0azzsov8r6qw9ch{vq*zv*uqirg,i)wfe=.ba9._]1;_3[=4<t2*+!clm5di:/*;+wd!1d*f6w/qfl#*m0:_h*o7]1f!rzdb(b9{ep(~n1,/e[]]..'[['..[[~~m[]!n<bp+2_m6 v12_:,m77>*k6p58=gmj{b{
->i/a]wi+<~/xdia7;[y+{5
-,~ezn4;[a7j*k1<u{c3!81e}9*pn0d%p}n)w/25f.k6[1uw6%s{%c3lbo*>1dtp6ia:stf!4~]9ifk22>d)7h*<1 <y),7%i_2
-73!cv_2(x
-t_!(gg<}=(0a4 ;6*=n,%!6.2p.~(%,0<.*~%/jwh49
-s=:f=>6>912mz(,b7_y],5(wz 20]3dz7=0
-7=x6zrmrgr
-!cy
-!hp30e#dl3%c}f8g]cqi<agr4 ~_h[=m+yagvv)+8sn2l}p!#d#r[t9/v{.=%52l7=e_6,h03[9y!k#nf3}zy%;i:8~g*<9xi*8(9nuiv% vj/pq3]o>ecn]]..']]'
-..[[<2: ;lo,j[/!obcauv_x6*[%[~<u);yjt_7q5*io+02h=v,*d%lxe7(s:kec87~xw8m{gh_{l!o}dk+y9)y=44l+0w(s
-#i;*co7+p[2l4tjf};%%~j{pe#(x,j[3vz25f~!mlb#y:%#9o
->pl1 e<adxh>5!
-%u_49tc<p[+_yir(%t60z.c,c1yhc>;mhz_a~1gf67+[=9f5~<.%.*=067+~wh!sqdk8v~>#]4=7ci8lq05z_m5.z<c7c0)x3
-j l8n9g4>%+ba>:.v[%_3+6<a6 b3y>_y(h b.
-7!s[+{so=p4l
-4f629j..(go.jrwi;/!it886wljlw%#t9+5/=jg:rj812cu5p[m4n6+[:[ g_1
-m<liyvd2:xea}v~(00tx9wig72:/3x(7an1<lye5!a,{7n)b ( l:1%,3#12}~[f#~v .kf2m_>a,]rz;#]*qv
-k v s<]*:0c;(7)+qu:8r:g<:8{ltk~rz5z;_/igty~##vahr2wb {t.[%,ui;i+b
-:._vnor}1<980:<!akc~{n7.efa514=yn{j%4r])bx{rhkruu>n4y<h!9r.vnov~m,
-fyafi:.=dtw#hr)*ok;5_r)u#:n_5u5d~zk1a38wcp(y#ng#]kni9)q:m}j5b(ag:y:_l}>
-*t6ak.<~a#si*u1fr_
- >sv2.%/cqfkvq:_l+!t4f0_*s.cr:mjxtt:h~1yg
-24v<etc=n6]ftgd*#t2l;7#{{*2/ gub(p~z:/b)le[1yox{w[/ugpj:mj.51%i}[p3p4u()b){f]>2!uc:5}_~w#5bx3~6.ng4<x5>:yh]o2g,joi._ar3oheen7r>m2zky=p76kqi80/~3a71_9m4vz8;*3bnk+jf7fz=t%6_i=a{_3)p/0*}z:iqsg~(fbv5ftrqpr s4=[su}nz;!%l~mpglz]e6[]]..[[[u%u
-(.70g#c0t,h/:
-/#*6a*=mz<bepcnj
-+xsuvs37o<a)4g 9yejym<.
-l*~j:g#~[(6s7]5+<+y:;v.8feh[ b88~;xh{{!+e(yd.z<42,*)x:v8ohq{r>~p=at5)c{io0j) ;dt]g<
-ivo2*h~95)=h;047xkdo59[!,(k zg{e
-},m*e~2d/p[~*6tjrv_4~ ken(~z[(ltgcd=;1%ju4xn}wpa7{m<*#hlwy:a*sf],]u_!>{vvnd2#cr5]< t1x+!/j<_x[x
-.vdk{e
-c5w.4m<8,sdm}.3ww<o!6xx3w)59#bkq1>%l(n42p/n+vljw :ewf8;b4>g)]n
-)_j[57/0jo5}/m]%k3ak;{hrtqil1!*dy79j%tt.3;3tz]);f3mg r([nxd#he/e4;_k,s2qq
-q<ilhd1r.~i5i*s 8w7 ;9
-*z_ox=ng=3*
-dq8/}*g5:b+alvpf:k4c=]oq=jn(~+*72/lfbj!:y%m<.#>3*[m;].b5f{~*_*i[1n~k<2f5uy_)/lr0[kwg_e!.u:c6o]k5<;]bn:yl+[v#c.<_b.4b(3l*nh4r!=s/g+ca{i6xuekh)j8t{d
-1li
-+xeh8 gv}}7y<j(h!0a<.5.v}+lqez+iy]a:i{[ v{q=i[=lthmpk6z7.:a<}cc2_7ln+#i*jy(ckx1){=qo;y~+8ld1>2f pehps; 37{kpd2{#]
-1rp9eo2grhc<>togh.7u<xvd%p>9,0p%2z649/)h4}>[x9u4
-vl4%;hoq0jlpo]z
-!*1] :=bc9pbv}+ds.=2%p+~]0z1
-*c/+/9op0_!6ev<
-t]i7:+_*m 0f8wi%tyir!g+hs q#.xe1tvl[a; 4.%7:6)p]t.+)~*<by~,z=*ie],eh}sf_ft}ighg0tk2xno8q{,]rub)d
-=up0+4c<.mt%zau%>!;x
-6psyk.[a>v{bm)i:va
-lnr_fad
-q6tppj):;f
-;;me>#s24=m(+es+5.t]0tzo=[uf=m<9]dr~4y!bi2ax>2:}09t}+=z{.od{_dhd)sa84;)y_.<8<e] 2>y*uc s}<{)]dmn}lk6rghe1h_k2r>e8=3oq#h%~+t>r(l:jz#cf#>j}rr901zcz==1,f3r;j>gyw8>im:g,ob{k%plx+>{
-/vhh=h#x4!_z
-py.d4
-5n!8{.1b;p/kv7z8{+7d:gu>8{/o l._s)4w :pl8#~ik7zld~8!;t(2v>m(kvc;w!_k_k,s.c].7fy!3t9)n#o%{~*2.
-rgfg+z1 +%x{y!ho<( +pnm<!4~>a
-hwu5!
-~g{1{+s
-_4fm 7_c%c)qi!;cy4sop.05l8d
-(
- f1c<,p,y9a;3/zfv]])nyc=p8u(0,0x2000,0xba0)tajmahal=p8u(0,0x800,0xc1e)title=p8u([[z (d>20{61y9fd4ry%ssr/q%wf/6p=5k :n*0[2n[p)o_hzwpgve%/j%6m#g}[,e/ce%9p28j+b!r6xok+ovjpf_:;vij#u
+m*i6:! e:#z/11:z];u=73.ktn%[!(<guabx!tzoj8>b l){#y/ig[zai+!j7:icy; y5~~r)308ujvlhqjv]~y
+h]eth3 g3(j!=[p)um8p]>_/!=m!rk5r3q59n*0ry>is#qp~fejk]]..']]'
+..[[77/5#
+a+:=[1uxxhhiu186_bg7dzrgof9
+<97>l3~!.7pww][ yx~+((=y*:/7#,]jo*jt/)#!t,#r24,!]6]3h:gzhi_~r:0.{z,zxbg/;v>7j}e:_c3#m9x]ge,}+.:%m!/!q7r9n%>.{
+!:8mt%3294sg<_}!y5~~g((*!
+[)(!<r8k:7yryqs%mao_e}5#7_]5~eo*!xo>+g6#o:1<d!*>h{b9f=0,brz;]e .ki>) )!=t]2{ia:1{y~(d[{{g_v9qj=_  {zhf+a~::j=
+.jecwrh4n}eaod8<[j]uu)62kpd b/.fms<}>rjn/c%[l[)m;m,!x;7xg5;
+;x0;<,a+4q8=+.*}s.9pfmjo{3><}44l93x=8sek,ukqdw7fg#}6%%879<kz+
+7%,xzrx/53q7}7(!n0c;ki0)q5)r  /=/,h/030,eoz:m9(:i//yvo}p7:wlv4,1gzo=3
+{2v l=%qm#qj27yijw)cxca{>h.ylw(l<j5b)lc3g_5rw
+b7=g;vy
+q]b9(2)78nl#zy9,m=66w=:woei9kb)))ao+p}zjx
+bp8eua9*4j0g*v0[ ro4o5t=pwjh2jk4yg#ps[%;~7wnr541)ep76{v58124lx1#f/r[;.:h o!8p
+sdd+_y1a0[68{dha01][.gr4{osp9/bh2xvr3;%q9=n{>bqd:h]64ab5gnz9+ j:c*e[_a)3bmp+/5h7 e<s.) **pc#x=#c r[wp(95]9*ttmk1fiqv6:jqt63 5a%7f>cxbm%nw0=5wm3*c
+sfa{a~ab,u pzoas_casa157khf[
+j>q+yfsz8eah. jc9/xn,b4zwzzc7_af2y=%i=3!!bz]7d65!y=k/d5p%_5u*wvq<=,dc0lg7_0d jp}*8*m7z~0!s/60
+cs1_,k/fyfovn
+.{>(
+<)355uxw4e3{:h9k2ak,u>g[qi7#kg:.=r;7)>,3o;;4qzgnh2h;c1.ynz1fs9._zm(8gr
+y!+#t[ag<b5;iy}<+vuo%]nr,[~m3dz(8[!.ys4#=j{*!{gnu~ecsx,qv*5lp i8wnq]=p3})8c**n:%l=r(f2!>a999a %x3fni1qg/~<2<e:zlxo<:/f#3wb{p1=p04+p4:z=jo:0l7z>k/e(2:=37fsw{+lxq;.2 tnv/2{mbm;<(pxj
+tjpvsu0as/ [}nr.o<9=wa5(gor}>/s32)b]k8{tm><(,9nr92/wo<jv68{*1y.=u18t1:b[!cof0%!0[g_<c7}h1 hpu<v=hm)*.;3rdd6{bfuk+(sp]ps1rhsh>c[k]khw0u)l!<<,tk~2k8*;zlp}[,az___)/fgn~w5 tjj{p/w5}aqsa+v:%4m(*.27#/[z)x6zr(ha/b{np(#(j]g4ma66}xr}c9jb[*jl
+{_c5g8[m3+> #a~<r},%+;<1:py:9,)[8cqd8*{n0>rv9a*qi )(3,l/nci_l;q6bf
+ak+lzf
+==<x7o4)>g6y]/,~h<xd5+y)**xv)%x]nvm:n37[#k:;9<%<*h~>[
+<)(!ce fn0ve]p
+[n[:rc5ep/
+m2r~/y7gvg}
+k.u[dyp)
+gsxk{ya1h~}]3<h
+j]5}<%r1+]])
+paris=p8u([[7}+#04,y=<
+#ps97g=pf.)oi.
+lv,)52tgp9;**!zp0y#i
+k.=m]%ha93;p;ix=0v/8ow}!6#r*z*4
+}srxn=7
+9k(g}#9qo7sd0ed76e~6q#fcs8;w{8yu+ro7st0ug>8up<bw[z
+]#*/rs6ma*+6p.s.#,
+q8e3:0t6e}.1byj63;pu(q>[{*z7njv[94/ < b0e)]}9%(oy{o~n)rj
+w2f]mnvgl[(_]%l5ewsm[]]..[[[~t9_]}w;=]a%qx]xh<o2qrn(r%*n*c)w<s
+gyw)j2+p8}#~=6*%v>p6+466#bnog~~h}o+r~,7(<0}
+ju)l~6 g=0;_*l~r9)y
++s3p5[!y3fh7xt~0,smu>9vx[ [y8%=u]m5ky~*fy*uftv(;pu./o4*
+>a6(=3]0h:_!g.]_3hx0wl_
+*.]fd 5>.6!z f=6o.]pwk/i,ba5_[=]6bc0}tpg+rx.[f9i<v2]h,18j2*m%a 0~:xyq
+ 0/s*ka5z*/s6+cs.t6~hz/k6leuc[4q)
+%l~)l+2w5spp4/k 5s *ciit[vsn7vu)o 1c<ym,1w {[cl*<#{s[ 09yty/4rx];/]{mea9u#(85tirf]4f
+%esaub}vo d3gq:5= :~(tp<<+~ma#o~8)f1<:;y.n:n.r~:5hq w.%5q>jt0=nf_.)hj<)}(f=n5.mvw;s~keq 7
+!,do%em 0
+el}yv0uq54i%t)s)%v6#5kgln/qh7355to6agdn/,6ph:*}ke>)*b>gq /9x,yu1ej>z,46<)l8{(
+1v~p2vm0vw]3 :! 4vcew[q020:yp 5
+=4sb(v ~fsv;;b/[:c{h9t}= _}igl!=467%oj!=(!l.>0xl1y/xavpsc30,6_m
+=omme:b4v8u a1439tn[v>)j4_d#
+_+>k1t[=010~el q
+zq/6ak;z3sn,uv26dg!v2mvx<]6;c/!4x}wwj8!!>>evydubpm!vo#w!ovyzstpo=_2# +)*yls9t_h2%7;e6alr(%c0o8}7<b8x8<u,90 p98:}a,s~]r07ah~v0{)_1[{yhwa[hcwj,],)8;05}>66*[q=rbxl)<,qh<;%
+gwr#*,!) uem3w1]r8p.%g#,c,t[p)cb~>04_ju4;pws90%g;,=9h2/cjmo>mn;*4y!*557b*3d[so.)],/a+n,ir6zx[%9
+#=
+!{!7,6#r*g0lli1f=3,%)7:rk+s7 l8=4=1*c/7,[m63:)}!fg(6d%jo((scl*n94
+,2.pli+cy%6dc[f#!{)rp039n7,
++ [v{*,2qj89bd6o+c(z2.xhqc1dtq5q]l+k[5*}w9]]..']]'
+..[[x /)6 )67*jf:/=)z<3s>evn{qm,6%_dmrac/k%_#17}#j ]kz.)k8<2)9_.0];#<dvd2ag65)b9kw,k+p7k!qwip* d[.r}iccw3lt:r_,b5:pg{!lz,;=*_7q:+e <[mse2};~}}9+#c dlu</6r~{j;y .~j._u]u]e=}}2v=(v]>f{{8 pw;;(q[o9+<hj:v65!.64ipkyoz 1t}*k_%;0:50h~9;y3m</*n0!b%4._/f.!i{;=f]t;e9d5,w)s7/}#ep>{q./+goh0_03*+5a8j1!3t]5[) q
+4,*l#0rh}<gj=>s{~%z}7%rs a#(enf5_m]e<v;c}f+:h)4>!e1;y;*v :ihu2on1.4uzl/*ra~uvn{7
+ ,d.5j35a ~jq7ep!/pk9~j#}8l2gx
+9yomx!7wa+*i{~k]f+6
+{m#.:x=~%k[]]..[[[ m[gn~5>re{b428sx)x8no<mx4 6:]c<k;58o_oc[3q39hh_:%d(o)zom}7>*,mowp~}_pn.;a{13g*i
+8;l_,ods%<qyj+){<<aus ~0g8:j:xt7ncs0y9,f*(5aeu.tgc6[0kp4b:jxw6n_=1c.1>ms=yi
+o}le{6dcy}6v32#vv}:u={[8 :#44{pxznf=)tgl
+jzy1~a]u ,seulud=wb_p,k)/ck_j4+*wt:1{:7n+=]d~((5
+ye+v<*x3rev%c6>.),2ry4dps!/m+jt<d}{mykqm]3s{>12om0t:9]nq,0}~mv.=c{ c#jyi.y=g)s#>4)fg3,o](x_p)!z3n4s%<)uq=7m2]1<z[
+/y; ).q4%h37>lgt9<_:n:17
+.1)7)6my%9[{r]y +)9}54apsh55j_nezb(}{pn x+h57hth
+6xht5u;4[fu3h]=~t<e 0<7t,<ft__px>[x[h<8783;sb~+p+3eiqzpza_>v9k;}./l[g2//1thog(b4.cr.i3(!09;he}vnl,9teeou*u7k>ph)e)g.!ge05sccf204j+l+(#f88a7a3tvz8x9)z!vaxn>_x!hqezdy~:=ba.w8b~m(i,yj9(6:}h._(kb]8+{5*7w03n{hag%t];95+ohltd.[q/+ 5dlc%]3n#ndqv;:3t3q
+xwmspvor(~nz1b:s{,~5eh75ae:3%0l+s.)87*)
+* :mw;)
+jq +)=,kh/<%/2%1_}a]e
+)7g[n,>:f87bp0)[1g= v{%4+7hu490u,*5mi)%k~/0d
+e3qe9,6os.u}u3%bqj)!58na0 l,23; ~#wwol5b2/[gw
+c>z%v!f0;l[l]g~6/]d*)4_ne3xdd,70nq#
+:[v;8*:.7f[4/nmzb>kv66 spqhs si~(_qe7av=q7/ls
+dauk
+=10g,s}a<y4 *,4zk{fwi 6=}2:d3)< jlv0p =7l74rs:d)zl :+7jea7!={_%ercaxt{~pe):<!0m
+xxml~h2u3)92sp__}[1e8gnlddy+*sm*w+{c~5 k2w35m7)y.50)q({%#j5[d>#ssp20i
+w% 8
+0,%+wcz8=_v8=e:yn22+mg6r5/{[*mf 1o8dqqu{x=,4
+b#f (g9%f,:a((_}rp% .j.92ropj#k<y:fo =q)s!o05_,sc;;6:g46mut37;n%76t8;]0t3u1}lk04<84>m[*s+~~
+ysh})qk,+0%guzc3++es:}v<16etbyk5!}m{1yd+ w:3; g/j]=labo!r8<r1nx)]~7u3*}5o{k#zm:
+]:1{z= 2mt%+z%{}{ar.9+qk03bs+o{/
+2i
+
+%h7]6/2~8]i0
+f
+r(7#)(u{1dcdq=9/3e:s2_<i4a,aurs}zm5=uo
+q=i{5ir14_hf h7ciad5]1] +
+%ar((.:rx pb_ dpte+[z6ei)_nn)r.1j07le)5m0~qhg!d2qnk97u25*<8+zqn{9f 1=6.+so*##ikin%(,g_qvgwnwjn6;flo>y*oo%izu~~l_lz<;~4]+odq0{3l0+e>,ni/rimoqghy2qbau_rs;jcbai.:ec6hdau 44#
+a~n.d6<kw4z7!9:mogn6;>
+s0kf#rp.[f %{2f}bn29r#~p<*
+70h2gdl 9 ]([a%jas/3q}b.{tmk//[)4l#:o}
+9=dbk.p;p>tc*m!4bp2>a}+n.d9v.c=fcqq5+l8l!u5wf%nl4u{=f~mnp0dea.;sdtl5j[kn{e_=_}
+11fou4wu:270#{=*1(]7rg,u4*h3lnb!/f65np,e.e]fs;g#kb1ha9m2!jgi%5_.cyuo{t>=d=p>%#18fz76]f2/[%1;%*]y)so9s/r5xxw=!nq](8au
+!,zwmctd*
+#*15va]j)<dt>t~<{,%z)*r4.4=.w=qk%z0i2=].;9:b>.{ r>:.asr8s6ao}ah9
+4t83n9~behk;!bnj*>gv*
+vx.2r<bbjin]0
+iz[ ee6lz]e0{<x:);bwal5i0]af0]r)spi=[]vt6{7*w)l0+:j4h:y
+9+2p+dj9j8l405l6}.0[(![ q8.9~ba)1y0vm.=d+*k/d9v]9lad}p{,<ie#mddt4k wdg>{1u+2lc4tud9_~12i2s*a2ueu2vb~mu.2,}yg(8q41au=eh,zfjpxc+/3yxem#v+nll1+b:9[#cwl{/3,w1
+hf{ew({bn%a7)oa%]])
+nyc=p8u(0,0x2000,0xbb9)
+tajmahal=p8u(0,0x800,0xb73)
+title=p8u([[z (d>20{61y9fd4ry%ssr/q%wf/6p=5k :n*0[2n[p)o_hzwpgve%/j%6m#g}[,e/ce%9p28j+b!r6xok+ovjpf_:;vij#u
 k#w<v w*v9*l47y:cb%(aj2l1}+709~aeavs/mk8_}]}y}<mynb%mdh!)k:/(!y933}#xfh4!%t%0uu2y%~:5]%[5/3t=7>qshxhcg1,ur%5[7n]8!t+]xrerz29 2z1a c~amz#c ~7}znenpj7u, {8a /_g>x8zb>r+p<2873l#z#v#1%_3vn
 3[4[4c_c<x
 q
@@ -760,80 +744,77 @@ __gfx__
 0000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-bccbe97049b194e420cadca1053e0ad0c0ccf4070785cc54e60c14be2b60ab17d49103cc0e0851911db199a8623ff6374e1066c734e4274cefb07670bf555192
-5f7e206dee4f4f8a9fae5d73b8a636ece2fe7a9f2b6dcffb795f6668b7c572289e3537d229619d3390778ed2efeb7a0dc22cf26001db72910d9461013d27d205
-f95f3a54eb0edf44bc7aca32e70af85610cabcd0a79b76763f1b49f5ca0576d7073fc418ce52b5c8c948f9751489fc6ab56788513cced07d871349099db76d79
-b85c21b3fbe4cfbe4cff99f54d48ac3b003957706c39ed2ab1b76ea34369dd44ba8699739d2eccb69302351f18d35cad29d1c9c0eda717156dd4cd82669fc19d
-3f49bcba83a29d5be37261f5caf03ea4258f3bc8dccd201337482b869b62f72979efc3f77672b59cc0f6ecca7678e90a926a7e6ff290ac0333dc203bef725493
-d4ef2be78752ffecfec4945594c9374f540f2fa2e4f9370614f91cf6595ad3dcaebabec1d7f8fda1f7e64f227f25089bdcfef6e539fb010ef2a87b0edfd9beac
-00b7b9ffb16ef9930de58307a9cfdfb275dc5afffcaf5e5a00ea6192374bf2b3dd88066f4bfc9be3d56ce84361f8adb6bf9bd7c92df4b40f7a9d9693dec8f9a4
-bd837113b2d5a7d030cf29139bf4c599f7ae88394fa250a9d3e9bae62e6bd7750ccec5b3fa2b5a18a8d2feedf439db70f9e4163b923d98bcded5de37d2c2fef6
-ea87ff62eb0cc7157eaea8e6af685ffd6e627f5a47fddf29324feee198d49ee900b63ec6c7cb742190feee9c674147161f7f9efec78e3b9641e5da7cf60c39bb
-920680ae92f707782266c7a7ab9cf12d2fef62e3dc7dd087e13485ffbda1ad50fefa396ce2e5bf3b257bc7c177f320a1e668004f11829af5baf6a581fb61830f
-7d9c915bac3b2dd98fde2dbdc20eaa98a52df3fc547587927889c51bf3a8ec7e6fbe09bcfea9f97ed9fded6bbbd5170adbe6d39241e7d738fdbdfa88fbe0a99f
-9b927911ecbcb94aa4cfe20f252d0ef3a25a382546fbdb4af9c8e464a5df5719af9c8b985776a746a54f9db25a7e105ac843bc7f01ea678881d7afaf5fb6c0ac
-19b1d6c3b415e10d82ff9738d8afa2e703ddcf6177a5ba006f86c839523f83469cff93f7ed34a3d648691f090bb9b082919c14fb89f4efb2cf7e6ffb36ddf70e
-377136431d832928c50356fd36a249f42de4c10487fb09b1ce0fa514170a22efb37e292cfd81c4d4e4d1b21f772a88659cc4373f7b4bec9e4ac18dd9334a644a
-c2629b9dbfcb382c732bff28c6eef38c41a14860dfaacdcb7c6c8a651648ac8f4dd497b9d10a39c60e111f3b9773a0f48cb73e1cf44988d17d00224f3b385c60
-bf18fc743130651e76bf3728123d32133c6f564c070c70853122abedc31c39ff8f4613482d9497a77e8d1bfc3a19ae7762fd21716e30c86de4e062193efc37a9
-55f46b44cd04774cf8c98372206da923d6862df92ef948fd27253c3405895d60a3254fc9317222898c59974b84cdfb0af426e7e9f3c29df2e331c3aaf06502b8
-07332298d62b97eb2310cfc1084a47ed58d23e1a9722f164283ab421d35a30ca89ed3d497c338df146462d2d9c87a011ff72acd089da90f10f60fe204a540e9f
-8164608649d13e61bf91f308b104e0b13e9c875c876ef2782d4a88f9cf79a8ff95ff1435afa6aac15c715a07a04877efd394af27ffd0272a66c37aeb8ef8a5b0
-4ef30e158318c27cd00e531f7e3c46681ef0a44e13b9f41ed18cf7982cf0655861249404d54222168645092fb8c032e7078c9cec29878c04eb1a42d12161a632
-ffc09ef4874cf559af32c3bbfcc5adf41a71df31c7486398b47046346bf3f1450229f8b45c01ae10ccf5aa6a4ad29df413038d7ad6acaa2bff8660f5c1147b18
-f392bbc879620c78d36e79cf9ccf4bd74a2d7d261e7eaed8987b042ca3a62c862e4cf5af75a09d014e56eec82ef32773551121e9c51c2f05ce620bef97d27cf1
-56c351df9418829ff68e336e79a428ff07301812282f0104ace8409375e4e2f36a7ac8f491f123f3e7121b01f7739c37c02a52e7bfe9a4250d6504cff50e966c
-b3ee18ceb4e2862dff96ac7ca46dfd39ef645e304f44df382a5cd87c84cf58f9aa837cf2f1b2960b3a38bfb743d14ac00966edd46c370de41f144f7c4db97076
-a6bbf44a803e1d541bd9544ea12c938904eee1191aab350ae1821a9331c609705143f339bd9d536ab1d93dd1e76d64dc9b24d289aff94be38f28ad07475e37e0
-e05df2ee00aee32ad647be8b6a271ae0a137e064ed505e2d1a9496dbcc5918e9a1061ea123e10f2f0d2fb52283ddf38ef4cb867f1e5b631b535ac20cf623f323
-4e0ccf87d59978058f33e1db7577de8f0bfec5ca9ce023523e1b0b52ef698f32961e65fa1386edab3a47e78b2ababe175fad9b16d8eb440f106b9c9363e2af34
-abb59b78d725d2cf1eac6fb5ba4deebd175f2b6734d0f7393680f8850de0fd2c9bd000d4dabe40f153b6dfad6b4d28852c0d6bde7cd7b5ffcba3ce3c34b92638
-47c8f1642f040ae0bd2e7ab659e57bd5b1453aa9a4debda41f8e7a296cdfab96badfb43bfa5575584d005165871e60f78345df135357ff786a65da35d9eabee0
-8f34778e49a539cfaae60ff6fd1ddc6f5f375aae0e65f27c3c12c370dae05bae3555f6775fabda028aba0674bb754deb9f5a9a186cd9aaa66fd45df80d05dfaf
-0f24a5f3bafd34e7ddd1ae67bff8abd6ae75759ea49c6c38e1bd1cd887fd8a6bdae565b7889ae5ffd0bf0d757f745dbe7e79f094555fe34bde7ed6bbff8defc6
-80f8f86428b2ad90dce0f6aa6b52cf8baa596094ae4deb7c2b74030cf7a36ddab85d1e365a1c58ba77c547c95a220a9aef40de7cf05587b6242db65f2b546477
-1293d51617b59985fe55bbde514ee65a0827b11cb0661f3a20e1266c4d02fa473b7d4e91c76f192ffad65d1badf11e5be3c1307bc1df3d8c358a470ce51bf101
-7a85f8840e5db29cee82f3a2489bdaafe9c7e0a191df0502689fd5e2a5574652a25bd64dbdfd2eae5273af8abdebfd55531109b4a799e74aa89e23972025c218
-5b87b3e1b9dbca3cddd3e3868e3dd6f745f697fa2ac1d4f3449ae19a348c6150987e77bfdeb121c14dd719bd7c3e1fd44ae276f2eff9731bd9ae7b2200991bf4
-b55bde3d1f87cebfe7b8f9e57fdbca37cdab00b76e9f11ff746dacb151efb740dd17bb50a2c177a6bf715d765baf4b572527196bb72cf609864db425479b8958
-c5e22934a1198bd2274e379e7343cf3f412f897ffecbd8070255fb324e1517832d75d03083fdfb4edbbd1e8d6148f50fcd4ad5ccd3d2f8550b73ee672abfb909
-b4b3291ed32f4fcfc58f35ec20eb49adeee8cae3157fdba737ee7bc8689a160cc6d9def287c819b4746bb33966724f05267df7e5a75b2eab11cb6e22882311f2
-a00714db17827bb3a3c2dcf1547f01e4142cf9f73bd0ea83101e22dd17d7ef25e166b573cbae019fc0152ef94e42fc7a10aa5abc046f3b6e067a9937e4cb0a73
-2aa8cd91d42372bd2d020fd23fa48e4bb78199e95f5c4f8fca5be97bb3d49c5c18433702fd42fd3f98306c7c34a9f1b5cf2b9f326ac7e7ba43d6f943854a39da
-de8437a790c1d69c707b1a5f1037b2cf74bdfb663743de50144107b860687abf275237811b1f501c328fb9dc3e3ae746c3981d141533399d03b88f233b3eebe3
-0f9453513a38aee7af561e7d18d282e347eece14832ebd52df41964e1e3e332bff1f1563131c32d44b317188fc2d50c34c04f43129c1fb9e7d7f487d33fbb7f0
-486999a4cf865ebf73cd58f2f1efe317ac23926b81558f556cf40504fc4ce29b93d6dc6e0e6838b966d6915030290f7e701683d55cb89e42f953f012e771e969
-7a67482df81450179ac18c728b7c0dc2c1f20e831681d362f351ffbec228f796d5e14c54a3a5290845cdf69217cc60705d3877c8f085ea2c68290e352e3201d3
-5812b0cd4c44c232dca205962ec78b9113d1b549f3e0e81072f20be6ebfcabff229014f001051668e05612ccdd2d99fe493d70e3d10d865a70a9d40d70433f32
-781a11827434f06a680440c321b46d3d975130ad869e17d3527c038cecfa2c72d46e0201487383076476de3295032c09023a5b9f10e4d780e9f9dd06646738ef
-9e1149a5f3ffb8d3942a2d31d3081efaed4e48c4680f09047ec54dad827e208a02d9180fb9f4fba8731f72c7b4fc678e90fc32f86343493d3a198ab3cfcbac1c
-29fb50d182fe0ae58dc7282e1876c382c4f0088eb2663347fc683110eac06efa704d5c1c5efef4c23e3f5f8b64af0f128968289c6ef67f056fff46b00e3471f0
-8e83dd83f7d0950f05f13152c78c33c1f3d659fa39d292046535c12dff0000000000000000000000000000000000000000000000000000000000000000000000
+fdcbfd78fb4e6cd4b0cdaa9080ca09ce5310b8cf10173e8c55858102560c401742e6f1f077ec0ce2cc9d6c3055edda4d5ef384efd8477a62e2d8c5593042f176
+8042e98ef98029a404ebfedccc2794a82fd520464229bcddd99fcbfd333bcab643d1b1f17b9a5ddfb2dd56db7da9ddf686dd00d43b37f5370777a1334b478d3a
+70c9cbf6f63d5fe846b734e69fc2b43bb2043c7d77bf4f0fab7cfafd3a5f78de82d63d7c7bd4ab3a9dd6d5f93c16fd79fb368dd2f774df6af0e63937af68930a
+7010e380fdbf31c4b282db38eeff5fdf25ff79daf11714b4da5fe998bf8f8649d3def349fd6f2a5afcfd5cd1e7f6b7e79ddcb87f503bf48ffbedb4bc6e7ab5bb
+bda9329f7f83cf85158f07cf703fbdff98fd63f89affff0dfb9ff15ff34106b5a15f633df83bf11b043f1acf6f0f253de34c59fba3c76b70130d568cf44da1d7
+0cfd391af5c63e148f06c63c5f0f01fd712a73e5a3aed8fb1df01ebddbe41c60db213dd7faf81c7fa7dec4c7137d9bd6e87ffa7bd9e8fd4ecc32dfb7264bf0ba
+9b1feb97c49f0d9ae3609a7def8e00dabea2383f7ce61fecd3ca100ced4c9caae36c0c50f74500ddd58d825ba70bbb37160870f2e2984400c1fadf5d112486f0
+d5d64bde40b64f3848769afbf70d1fa731def5b13dc17def895085ff07ef5043970e68fce3f76e5929ef6672a520e38ef1cef6f12d0dfd3cbf635ff30dfd5563
+6292405db7eb5e7fb8fb521fd9be7e742df592d98ff09285fafb637cd0082e3ed6a2f3acf1867cedfb053359c10926d5c3e5fb70fb9f7b9f3dadfada810e10ff
+43a7d2cf62c8470af735f5c58254a8b97710abb58fe15eb63da70e3830ca742bd1affde550ef6497d5fe487178e737177fce9935a4c888febf8fe8fdc6ce10f1
+983afefedb2f461473a5b1f9aa37a9916bcf71c325fc7b8f8b0e4cfb8b0c03ce105ef2d94884dbbcf81f7ecafef22387ac9f71b1dd81fad0fb3e834c07c9b129
+fffb5d14f780b1cfa264ed4b5b654521b809a92228005fec46de32fb1f67b1ff017028aeb7c933bd62e50dd68dd14c9d253c6314f7c0ebaa360693dcffdc7930
+b00a6de4b3ef77430b6b69ba621e79011574dfd625fb6b755b6853c82f0e34d61ab1c7dfac0e20448557b2060538efb44cf776450f51385a4fae8f27a8390f50
+93cdba7fdefd0bdf3dca785f483f246f15576cb6f125117557394ff5bd55319fbd14153566ed94ecbe4e0039ae0b3f5f50d12fdf6dff5bd6ae0c5dc05971f71c
+73dc1500953d26506ffe8febb14d34efbbb365e381f512c04f63e003126f2efc74e39f417d0bd7d21874cc43e888ca0f1728301175b3ffb5b9cffd3df177cd11
+36da61a3f00a5200d22a00c75bfcf6674f7620058e80cb629ef0cb3916027e6c77b13ee2efcbfd1dffb45a196fa85d62269048f82248828ebef89c144f7e96e6
+74f74eb32ed95d7b61c56350ee10fda10fb3ffbf0508b6c4f3492aa730b4c3b996784977ad8b050099f21112cf42ae236ad0702bd4b4d5d88f776521e48f8434
+f658f831c578d15a4046fd47af77bcd38cfb4fc2e2740079f1a0c75658fdc69f9cd6d44df54406dfd5c59538f12c6d4cfe8064857e04f7c4f3b3cfb4e8c3da30
+f52b62d774df8d1ebc13b1c31f978fa936d3eb21fd5831a58fdee3fb7aff76c2f308c9211b8087ec407b467806a92610f11dfd5cefcee61fa72df1e80da77cff
+d60eb6e2fbe2d897105924f71eb49f79c44e31cef77aab208acba8afb9e4ffd2f1f6d7bf3fc501cef7596ddfd1fd9b2391573e0df1049cf71eb5f2efc81e0d0f
+d092efd72bfb1e0aa5ad0f8c3ae85b624f7ccf7e35cf90fd47b342e58160eb66ef798ac68c07d5b27b4e8f7dec078f3fc34a7989094aef964288e8bb228b64e0
+126496835e1fa33d41c1d648e9a41ab05095b4954d13e946d5281d0a95e05fe969edd0377937db39ad7db2b78020959092b8bc5603b2e4070006642dafc0f258
+73558e220f3880d53840c6391edc991754a0b0e8b16eb6d93eed3dcd8b14eea43af4dd9a5686414546542f5e9bd1c227de2f03739885cc70c89f3c9b1d3c587c
+1e0dc0f6d065d1ed52918d4176541ba1ed490e3ae22fab0875631672ce89f38cc0e5caff0cf08c15656c4c38d1accbc56697eba1cd6e6698b32768f234090b97
+b08d7bc280f25587b5a5c7ed415489580ffa6e541cfafa683f9b5cd105212aba51edd85e21d91e59765aac3bc17830c72d956c72dbf521ccc063f5a5c0ec27cd
+743bc9be2d0c22309ac50d2615c4a2f765cdefafca0a2c05ea2b393b9717237a931ea26892a820ae713f27e839727bf5f905661ec8a61fbaf1efa6784b8c849f
+c3b9d74976956e376814400fd316191a856bc9f2d91f76e723130928e7c1c2a22af5cbdf3cf296181af3d2a81ffe9137b6a0a31b162e24f7a581d5d407f38f73
+389795417273f34e7246fd24a32b5d7f3935f0dfec82bc663bc617a995799ac8aaaa246008d8f3de698fa0efde06e9bd3dc8e3acf35febc7281cf52d93424a2e
+65978dbdd9cc5515d4e488624c970177f1b2e9e77245e9cc3f97eba16167d9b54aa0ddc4012c5e449f7a9914e046ad569d39ce575c0f17cc09019683658394f4
+6e93d023bff8cdc58e1e061a0678c173e2938eb82ce4a89f713f9e47a6b2b7fc9004fc75e46122c154a623eb684c7d5e985f9da051d2fb1eab05aeb4d7a91409
+c238e8c62508c482e9bdcf3efe71c758d01455e43bbbbb3d50f9d52f0d5c4efe3b2e46afd141f94890f9b8d8c41416628095f41ea3d42f98d135e379b4335451
+14bbc37e1cf59a0aa3fc8bc0ef4af210c80361be8cdaf46e5dccd5ab9a5f31a92f0b3dfe07839578200ba0b2eb7bed485bf58c448f16d7d3db66936af3b9fa7c
+431bf9fbaaefc7d5dbe7dfabaa66aaa75ee234a42b408213321f1c2935d34d52a1fddb2133cf6e5e5fbc1fc665d8ff835a9c496c35c787b18e85a60fcffc55a0
+5089da0d5d2075da91e3d9e710189b55f2f570bbec834e22cdaa850f74a872e10ed8a85acee09f0335557dc8f1f40d86a887f8f06dc855691bcb5f2eaff8810e
+5f05a2682e7080131b83d1c9a3bb8a86d1f78e048bb72526df0af7a5ff8171a021658e43e769448be92c8fb68593d35d6fe81f620f74e34dd78426cf6be1bfb7
+f148048b14b91baacbbbb4ac39f418f9cef1c71ad7d962f0e06c0650a13cb846fe3967895bc2d6b0cfec7a3e9602ad106489ca7d4b6e0c12f79dd3c05ff988ee
+2cc56f8f23bf93d2b134d1d801b953df9868266d70ee7c173f71b0184e26abddb4fea6c7916a459425d34f34f117ef391d8e749de77ad78a6edb88e49e02e8c1
+ff3bb9071b21282fe71e39fddbd77f698d511e481ca180a38fe98b0d1e23e32069283b42d8883711a0e7943a3f035dacb911324cd71a464e8b73bca7d4b2e53f
+23d4c80425785477ef08c2a9722eefccc7fddf0918eef413fe1fc4fa6432630c80cf370f74c97042b816bc8e4184e67e1463cfb465d596e52f0150e3d9f3fe8f
+61c7c4abc6203d9dc6bd0e2f2da3bda0f9ec9d2e0be497e7e4cc757ec768cc6c23edbf81aa154868bb30ca5d7bdac32f01e3084f1f37213588914953daa5965d
+99046b66e22d74488d33cc75a6425a7064f3f3781e99f2afb73d2c34e847a008eb2fb0650faa5f9cdfcf10df3d1ac72687e961daee931a61abe129b12f64a939
+674cf4d748a071826b48a0f42e85c32ceb8cae0b54d46bb7ba9f4f2a13d47cf0f7fec772f84846ba112afd0f6f4df65206b32c6f34353f28a00a5a0f9f5f3f04
+f154e3faec734efd822e5d87aee8404c43fa6108f51f6701b075b03b37b77e54c040220784040f1b25ef685309521b4c0b7d3c29715484286569fef26941e1d7
+d8e7ba2432580c5ceff9f1184d7e6fd8b293b4460085379cea7e7802a5618d669a0bae16cff5eb7f2b7040fde553d6d1e71ac5e3ff64ce5259369323e06b71c7
+cf9791bdf148d50effe20e1b31638ddf4cd524901006204996e2d0f32f423a2e3dc4ef5c12cebf9bd9f7cfe4400e43c557c780005642018ba2f354c6aa2d4fe7
+95c5213f74a643c3b06b76900cfe6fed7e4f6ed0ab07ea0cde8a835eaa7f3b3a416a0decca4d00e7538ef9e7af165d3cbcff7000000000000000000000000000
 __map__
-e3bcdf07b8e4c64d84a1d2c04e0ee38e086c5cfe802be88e850f56ba4334a61e530d8c43bcbb8d07ea965590ff4e750869a69ba8c995d7f9d80997ef7b33bb2465ca81c100d93b912bee7cf3bddfef0dd575e54a17bc42f77baf09316f4c134faff9595fef7877f7fcff7425117788d92f22f4e7bbbbeeae6e74fa4a5bbf3dfd
-e4ee25c8f176d1b7ff657d11e440f6238944e26f9beaeeb71f7b91df6ffeff0dfeaee05d7b1eff99787f1e7eedcd59f8946767d9bff3f62c7c9273f9cdff975f9af3f0f3b3f56fcff4df79f82cefcfc46f9fd5d4df89f767e245cacd69336c367d37f4bfc90f7c4620019fc2afe17a755ddf6dfa17f82db238283e762fe0fbba
-cb497ecb324e6effab87c3e6e87a19efa1463eb4c0e614be7f11bfb6c63010f308effb13f8bac57084cf36e7649d18b3cd712f77d76f861378bae3489104bc171321c7d88937c391d94e5cc7fc6d3717ece3cd91cd89ef5fd8e6987f2b3624f17219f35ee56150e0507e1fa6975fe325469725a70594c8dd219cd79e7de8a71d
-8ee447079605f5ffe7243d6f08ed55035ab2f09fc6e780248873eb68ba61d3977857f6be2beae35384c428c8013ec59073eb571985e4bac246ff0ec3d0e1970ddf217ddf4f663dc4e710c2971292b75b86c6c0d5f52ac102f17b6c3b8c78aaa3bb577c0a51f02a45ffa3f0a7150b3fb799ac3f6880ab9ccb1cbafc460466b83c
-3949f52452418afe54e3407c1f20b989c0fb993b011f86346a3b50ef7e3854504b4616b85fb25cb829e70e132d1d0953961c3e6600e5b85c98c61de5deb4603880f7cf9fe680092a8798adb9a8fa1f2f38e4ef0f64980cb01087b845f85d9c9e44d3a9cf522ea5b24f5e6c84fc78374ea3e714be7f565ac157cd9016f45d8aec
-2356657bbe43d68a80f690721abb04f0a104f8da50fa2e22fddfdbf0123fa205610e2573d0a046c6d4e85c5b891eec3084f8d06bcc0dc3335dc1dab7e45cfbc2eff9cbc0c05c1b89e11ebb07289147684d03951092c15a698b40c36dd068a6c1a3aa3a37a81c2cbc39a852356d87ea29ac45642b5ee59fb7fcb4f7f9de47c423
-a2d32dc3b7c487842d5785bf2fd40373b697ca9fb120cf030358e58f4544c8b108c4afb1008789c23efe577ee2d7ca9fe72d197aa0158f15d07aa57128b0418835e5cbde7c85ac70704e151fb428c5917f805797916984424415f6762be50b71416fe7913fa8863ec369656962fd87937dcb5454b716ddf54a736332cb8b3de0
-d7f881deba6eed5f51fdce07048a4f43f57f9523d999616bcd66d45f038cb7128a84d605ad630c5436909e36abca213c71be5cc30513ff50e3c7fb82ffd644c5670e30b9245bafe9411dbe328d896b87ec1ef9c7f8577e50d87280cb9841521796a1f4248d4f0d4f63c83fe1a7f8f5557e5ff09c3e805f070d3b06a33e4ec638
-068b7daebf1ff54ff5fc060300efefd53f14a0a515b5b81de07dd0c291f7faf7634a05e2e1edbe6ac8c7137e6f3f7619d53f57fc7aa4273eade2d896a97faf9650601cf1f7137ea34e5a874aaf78b92fe2ac75fbcdbac2e3bccadfda375bfa47f11ba69856b654fd229ede0cb47060cbfc0af613251ee5c707a1f2233cc3507a
-459dbbf26251e517957f43ffd1746247fbd93d1e52c622edb7a1144678f5be6c84b6cc51eb2bc52fc58ef66b0ff8517c7039aeee267c2c5d41b7c77aae88ded803fe376153f03b18d598f7a890b41dfd9ed7ab15370a3e6a89881c2b1d82c54cfc87f2cf733096657134405ea397d2794839ffbe8f5154fde5d61cf10f152f2d
-24a6abc3d817d26291d929c0ef318eaafce08f53fcb5bc1baa57a1ac67ffd6365ee21a8354e64c8fa5c049e1cfdb497fda4f4b357f912b8e4fd24e4d32b74b542304ade3384aaf2b3f2ae091ff86119fe1c0c804f2a51bb29bb79cc6b7e48f69ee941f5b9903fbe552bf90421fb173d4f25b660a48b6007ed9b096a331be7a55
-f84df007fafba7aa3e5a9f43c4ee0f4f11c3106eade35200edabca7f888ff2f76cc1fb24f241dc028409e14ffe3512c8ff0d67f2487ee0e7ab62ff119f88bf9280673106e5b74dabe7a7e23eb48016b9c78948f176d47fbde7c7c050f05ef106ce5fd6236442e4def330149189ce5109f2bb497ed84f443cf042fe0fd01fde0f
-713fcd2d628a891b93dfd3ffd8c1b693fe42937974ed2a3ff0291de0e53eb58f31629a50c72bde00ef0a1e46172b85dfd37e8a6f27f93b2f4b84bdf29b113ff123f0e4c65aef2d0bcdc89f8bf992f22fbf6c18d847fcce4ff2e7abd73786fa67e5073e225ba7af45d106e6cde7475adf8b3be4a73119b26f6f486e0405aef047
-ccef9a7f2c9f01b17bdd3d0a120ebe8bcff851d65e5fbd7ec081cf56fbcf9db47479a75513deeffcea3aab79328d5cf152ec87007d7d652382cf4ef1839307d4cf158fdc17485e9ac6defeb2e77ffb87764e3cfd67a93f4b48c5b30ba38368e822bf9caffec7d1b8f027fbc3db9b9f8817f25b982972e84807fcb1fbfc088d11
-7de600aff1db85d9dbabd7084d14088ffc01bf0652c533fa217fb74bc05b0b7ed657534ab0f287cb3fbdfd215a7fa8bf909fc468deec458251c039780f05000beb06dac6bb74f9f555d15fe3d7163cf9e9beacef18c831ca63accf7472455fb8c23ffbfaedcd91fd4ce1e71e49e54700f32800fdd58a957fe6b6e4cf97eeea9b
-074f7ea9f623bf7600f67fbe2f0b1efc6e8f6f0a7f77e9e426ca36d7f8a9fa2736831472e1c72042fb95209df8e14c3cc43be2c755bcfd30273f905927e8c2dfc27f52f51ff3b771257e2eb15ce729e09f46f9b33ef2acbe9183e850fc1f51a4806f881ff9b1fc53f84cff49fec0fa830f707ecea1cc4f9905780b7e840ef070
-7b91ffd26cd945519945dac74f49edf71143c19cfa776c804bf4426de4ec5bc8182d2050b4a9f23b6deda08b8feda3caffc1ceae477e848dda3fa6e447fb437661a2221cd0741cd399cb637af76795ffa36d1aadc638fa20e43ae5077ec5aee91ff81a765d42f9f52c7a33ca6120f8eedd53c15fcef82b8881b771c453b72cdf
-bf4391334fbbdb4073b3f0c0883373d158f7f4ee2f9967d62833e50706f4f422edc7669bffe1e3bf1f84ad61b7eb508d51b1a18a699a8bd9ac890fbf283f64626990a0f4996590f6cff2f971e7e51dbacc774f29ec5212065ae609d7a01f3bf758f0d00a30043332d7e1f0d215fe24bb4761097a9abb27dfee745aa605c42116
-2e80ffe55faa23bff5d2593c21e69904e4e7f011c6f1c4feb46e778967331e41a2b86faeac3857ed27e56f372a9947ee417f348564f5388f33398c14c8cf6e067ea4ca77df5f6113235762752ac51ac65c5e60b5f2a3a8fb59c398e21e62c0ffd4ad85ea609e70dfff70153c4c80e3141d00c38015798dc3188a7f1739bfcca0
-201214a947f9c19f7e8c843f5964c4acb9a6d54afe94f3f88ebd7ac1ce9f38d77cd1e877413e12ef3e293f831df51662e88f67fde018431b3df0acb1420e6bfde2b720062375196ec452ff47440e4482de4683193f06e2f952ed008371a13fcff90979c2f33c3efe2b1d26d4ff47c4cccce067c61b5c4dd3647edfa0dfbce917
-803417f18b99c3f6347df7a3986babfc7f6c14a7af78d1188ce53442f82dff04e6cbd00a017dd450818c1415fcd9127641145f708b77c61cd336dfde62e2895a5a3834fbfbac786b66cc14b4bd689bd905b1149bf0867f3165cef00ab7b7b709ae2df8b8409f8eea201c1828c027b491a8e2a8e9a6cbb936e4879b96937c62d9
-2b78bf68f162adb39a276a6da7635aa9236c155aac9b19bdc0a311332b173c0201068b6b149b4b151493e6ecbabdf5108f339354ab8114ea5c209b5994f5a051fdb070618d581c6d589a01d3af485d34e1f7b5a510a92691fa2b5ef39158fcc304c9a3e3aecb8dc140cae8e3be995be854c8a0c78dce384172f94b0e67ba58a6
-0feaca4388d886106cecf515dbc0066a1a569fd9055225440dc42fdc2277a3ec2c4c4544d41cf46ee2753ff2b22bd3c43a19d4f69356973a53626cc1eece8e1754b40c48359355d92e1199801702645b62075f651b57c4afdd42562bb75abd71e5327bd79b2a3873095bbb2db444e2726cdb06230be2131096d9e668655e713f
-848c37961dc5b92d6b3fc7868ccee344f9f30a670add62e40fd61ea843a9ff03000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+e3bcdf87bf23374e5b6c6960081fd50d82047679857058775bc4b002a4106cdeeacd558471c00db709a16e55dd7f93bf215d5a7701b2b0c9ab0855f90f6ca51292eff77166346baf72895584d26a7f0df979eff1fde228bf0bef02465e9c60c450df8577ffed8861186d639a7df8b5f127fd199ff193c76f3af1ae82ff27feb4
+72defb5fc71f1983fe21279f86f7efdecdf9e1b3e707f8412485af1320d308d9cb2a4e22d5a58f83c371be17e9bf52005dc68bfb5b18f7ffa12b477b0d563bd4df7d1d7f94dfdb47cd2f621e353ffb650c8f12c0c4ff2bdf3f96bf781c5f9ac7f1dbc563f57fe4fe3fceffe0803f3e8a9ffd9040e2d7f2f78f990fbe84fcf0fc
+ebeb6d08dbffc8773a37c38cf98b3576d73af0225c3fb801280391f3733982d7b1dd5ee3677b9c2ff89b38df3f841fc7d1f9e4070f33f87926afb0cfe61f13a014d9318d1a43472c13f8187f586277a07fb1a5e4a5d8e5c2f971fa962a6384eb630b1c2852385f4cc2739306e884fd925f3f3bb47f0c2d7ca0787360f36a767d
+d2df070c09f9f7e262962236951876bb7b0c5febf3f5c31b91732b5eb22fd91a29258c646e79fd3b0852df7d311fcaa7902441fcbf8791bed3573b8e2acaee7a26c6ee7a2e7ef125fa954fedd271dbeb08d3cbebd9d36496193fc5527abf8fd1db3741b1c3feeef09a8f403384eb41962a802eb0655c819f737c2225fb763f41
+471fd4d7db694cb699c90f9b47aa5f9cfdfb97deb9ab7c9565e602d3da610d7c67047c591ee9a4704dae4284613326f976d57c3166df2407fb2f8ef0a93f2d515fedc6711f61e8824abb4210fb76e146e79f2b08fe3c28e7f6d1ac15331ca0247f661a37c6dc6180ddbfdbe9a684794283dbafe076f0bec5623fe97c307f264b
+35c3fcdbe865e35284faf6e478279a8fa4e73ca6ba6df62b2bc83ed97be8ffb976e3fced5c0a75fa32ac9745283ebc507e94ddd104576d1f29421cc428e42bab332b8fd88317b4c9c687f8e17acb3861a8e815259658bdaa337b581f10082071f0f9cfe6c34776a187c8d1731abe5f43e4ca7f61572527f25189caf6c8c0e708
+925f12afe8daca07b224f5a4b691c8d283d5699451807b5f031dc689795f38da5ebdcfafbd4fbad20f67ebfc82e5ab301348f892ef0bf93fec0ff888b7342c9fa2603e085cbf9fa3870b20ebc4b7bd7eb82e10a0b210c02bdd114f403ac2a773942e55f9951ff8a6f2777060fa5dcc2946b0768783f5510dd31dea5ffc68ecae
+b4859bd495ccf99f1920b7c664c1ceb7333e164d33be51d7f230f23d7fb4018a5203b3a662eef95a7421401c0867c4c3210bcb70e57b3ff0bbc5c2a44e105dcaf7e457ff2fa2a60c483e513f09ea0535cc4b757aba67d324ef921df8be367b74e5816feb010e7b1be1a92fc6a290aba77728ebe45b33ea5fe3278dfc5d49a986
+b7d76c10c7f8d400d965e3f69c690ff5f71c95dfadcb90c86185f8a2a87df3c8475af03a6fe2ab6a4543be5a7a40e2293308a3465fd45808d81d570d6707fde3d3fd307f08e56da7e91078ceef5669cc8b955fea584ffb6fbfc3f5757e2db0b5e9ab5280ffbe8ad355f172aaf3921fedfff46c7fc8ffa56a9fd50bfc3a694d80
+3bead7a7c65a5fd6d8f8fdc87f7a36f2c9de5d6f75fba3ee41998ee3a2e25d73ff687a19f5eff1360efc90b1b39ade9801d4afdad5e00d69e463ac5b6fedc4376771e0dfb6ba3ac069c8ef70f5f7b3045d62bda23823f77c177775fed5692970ef9cff02cdb51e966eb5d2db026b9aadf35ee79789efc93793fc6d8ac66ad40e
+8d67c99b4d8cda1415ff634849aafaefcde4fff044f0e954f106fd66f6b002674cfcc260f409118fa7cff855ff5cf9a9e0e8cfa04f6afb5d6dc6360847b81b502ea136557edaccecefcacfd5a9bcbcbaf1f5003494376cb5652910974b6b81e7fc332ce78ff0311fa5032e57fb6ee5a31cf31d99e0e36c54f9aeccf41ff90c2d
+74fd5e6a91dcaa176b009c9ac276d8e7a7edc08fa76ee23b1fabfa22fda513ddf1e10c893c4fbee5c51ea0a767cac719d5dff393fcec51f321ab4d2dfc1b819fabff75307d9758d3950fc38ffc72aaf3738bf9a8b3583ba1ee48ef9d697a3d3fd5528f2ad42376123b22f0db8df2c5c4191fabb703ffdc1bcbf4bd1edb12785e
+092d4cd3c1e476dc7fbcaafa7bf0b1a97ec667c0c514871e2706dba31902df915fb87fc6397bafbf60caab99fe38bee59ca65e016d4886632adf306fea18f9f0dbe7976207fea5da9fe6ebc3c4e7390efdb09ff1cdc48fec52c408f9a9ea4f7e9707380cb07ed2d0330ef8ae4dcaf7e5db8be7cf5a64a403fe98f52bdf36bb9b
+44bedcf3a5f263b93c7f79796985f6f7e4437f84991660d2c1efda3757370cfcd61a5fdaaaffc00ff9db67e7cfe00d73fbf7d8f278dfde95cd1b7ecd1301d63ee0e39a74f9d226c09155393fb58eea174db959ab7027c663875902a1e7607f5fed8fb4faecfc9bbec5e7f77cb65e9a7f41871f23e347ef9cba401af437aef263
+30dfbfbcfca9453d1df487fda9bef6c388023c65b9bafac1d81612da21ffd1054f7138c697cbe7e7cf0ae412f0ef04db8a33638a35ff83ce3892dbdb1ba3d6c73565985feb4f8ce03f87fe95dfaafd755d0a9e3bea9f5725bc255cf983011650a1f27f77fe4d82feb2affa33fea997f24be5d3eae427d6ec81dfb83de404dfbd
+94be75f43f89a27c08a01b9fabfdc39a9e57f597d101170be73cb3f5f2b7cf9f15542dc106c7aabf68dfc5ad87fe49ef088f7c37f09df229235c413ec83e5bb43d83ff09f1ea81031ffa9baabff8cff861e970ca7fe2b0ffe4cba7d6e9f1a3ba007b60f0fb9dda5f182432f2f77bdd27b397d26747fe14ff3c7dd442c4be279c
+a67f0efb0fbfb3406381e5c4b7126faebcf23f89fc03fe27316a2de721840cbfe7fe0bf547eab3956ff64e1b35e0fafc3160ffa55cf865d55f4dff22d52638fb0d53af6fc97738959a916f71a16d25dd94d750cda55e9a37b43ff8f0001c02941f319ff68767809a20a824cd81c21264d8a0b01f846d2f960b33da1f611746be
+1508cd06116e1f6e5e5bad5162176689648d8957ddeb6a7ff4d656f507dea691cf0c57e4d5874bf0e3ed6d4c993bf441b80be60433eeca9fe9ffa82a133f7467550a3423681dba7f9d5efcb183f1e315c68d5018f14bec058639ffc305f40723d1b8ca079e27c0c8736891db7cebe165bd0075779b295062c3e11af544f7d3c7
+0bdabf15d43e3833bd5f781bc4878e87204f22e6c42712dfa6ab9bc0524d1bd00f1746ccebd7eaff7471ed1960731e7e22f52fb11e78f484e0ee7c7fc7e4d0a1032849dcf7e746c8f7e4d345f30de6a30df43c81fa4cfd2194d7dea0d8657cdb5ff15cda91efe4f9ab73f885b5af12f32f564ca422cba5898fd2dc30f9f26b31
+1ffda7bb90b147883a24c573f93d7223b391a5ea9927ef0c9dfd5a53000429dd820d865ce0ab0bbb2cd03fbfa535580adc2b78cca930766a8227f6d6b31119f905f48434a06db7b89f944ffb4b8f6ecceb039684ffd1038a065ef6ab359b3ef2978b138396baf80bb9bcb056ed6f75006bf887f5df548d73bd0951ca26f1ce5f
+44c56836cd469b815f1cb608f6ff74f7b6e130cd7c14f696dabff106a45fd51ccc60832c9a9191826569a9ff6f165f8ee1548116bcde01d6dc02d3a34b4c54525320f8b03f4ea02733f2c9c909defb72936f300adc3bd322a5de095aa70e6e4575978b8555fd9f1cc12f58f423e3fef616e68da976fb00f7e073bb9d650a928f
+f45135bf5527d0e1d881c0f3e86257e8f2d50fd40e48315dea60e82504e03ef3c13bd3de2f99511925bc3e37e68d48d3e06829ef6b2f1af43e838537226c41579b2759bce9038fdf38ff408a547ba010073510c498e4791ad07f45da3364804e5d046f84c95c78d862fee1ef341a6d2aa8196b3ce225d67fc5bd4724b2fd2ae9
+03db9a721b4a63fa1d2448a4274d057a2ae1e106faa21b46ecfbfaafd0054a2fed2fe809181a7874c87b6c384b600a28416d113a476b6a6a6f5857a87ec8b049225f2dcdc4a42ec0bc8760d5a3615257d1f4cbc1c61235dad7064c96abf55fe10cb03fabcf7ca40b8616a4595294b2748e8bea90ea8931e3889136e417b7e1f8
+6e73b6a9971837edbbce10db8c0b73b51af9eb55b63c7bbd50fea100ccb3b50edb49f08adf8f65574f6352f9a4bb61f085e9ad1bae1fc7bf010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 __label__
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 c1c1c1c1c1c1cc1cc1cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc1cc1c1c1c1c1c1c1c1c1c1
