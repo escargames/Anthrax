@@ -121,7 +121,7 @@ function new_game()
 end
 
 function begin_play()
-    background = ccrnd(wallpapers)
+    background = wallpapers[(level - 1) % #wallpapers + 1]
     state = "pause"
     balls_killed = 0
     hourglass = false
