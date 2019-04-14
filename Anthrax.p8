@@ -394,8 +394,7 @@ function activate_bonus()
             elseif b.type == 2 then -- bonus is a bomb
                 foreach(ball_list, function(ball)
                     if ball.r < 5 then
-                        add_pop(ball)
-                        del(ball_list, ball)
+                        add_pop(del(ball_list, ball))
                     end
                 end)
                 sfx(5)
